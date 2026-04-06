@@ -206,10 +206,76 @@
       font-variant-numeric: tabular-nums;
     }
 
+    /* ── Top nav ── */
+    .top-nav {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 2rem;
+      opacity: 0;
+      animation: fadeUp 0.8s ease-out 0.05s forwards;
+    }
+
+    .top-nav a {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      padding: 0.4rem 0;
+      border-bottom: 1px solid transparent;
+      transition: color 0.3s ease, border-color 0.3s ease;
+    }
+
+    .top-nav a:hover {
+      color: var(--gold);
+      border-bottom-color: var(--gold);
+    }
+
+    /* ── Newsletter ── */
+    .newsletter-section {
+      opacity: 0;
+      animation: fadeUp 0.8s ease-out 1.05s forwards;
+    }
+
+    .newsletter-item {
+      display: block;
+      padding: 0.9rem 0;
+      border-top: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+      text-decoration: none;
+      transition: padding-left 0.3s ease;
+    }
+
+    .newsletter-item:hover {
+      padding-left: 0.4rem;
+    }
+
+    .newsletter-item-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      font-weight: 400;
+      font-style: italic;
+      color: var(--gold);
+      margin: 0 0 0.25rem 0;
+      transition: color 0.3s ease;
+    }
+
+    .newsletter-item:hover .newsletter-item-title {
+      color: var(--cream);
+    }
+
+    .newsletter-item-meta {
+      font-size: 0.75rem;
+      color: var(--dim);
+      letter-spacing: 0.02em;
+    }
+
     /* ── Connect ── */
     .connect {
       opacity: 0;
-      animation: fadeUp 0.8s ease-out 1.2s forwards;
+      animation: fadeUp 0.8s ease-out 1.35s forwards;
     }
 
     .social-links {
@@ -254,7 +320,7 @@
       padding-top: 2rem;
       border-top: 1px solid var(--rule);
       opacity: 0;
-      animation: fadeUp 0.8s ease-out 1.4s forwards;
+      animation: fadeUp 0.8s ease-out 1.55s forwards;
     }
 
     footer p {
@@ -286,6 +352,11 @@
   <div class="glow-bottom"></div>
 
   <main class="page">
+    <!-- Top nav -->
+    <nav class="top-nav">
+      <a href="#newsletter">Newsletter</a>
+    </nav>
+
     <!-- Identity -->
     <header class="identity">
       <picture>
@@ -325,6 +396,17 @@
         <li><span>04</span> What to do today — actionable, not theoretical</li>
         <li><span>05</span> The cost of waiting — stakes framed rationally, not fear</li>
       </ul>
+    </section>
+
+    <div class="rule"></div>
+
+    <!-- Newsletter -->
+    <section class="newsletter-section" id="newsletter">
+      <p class="section-label">The Dark Factory Newsletter</p>
+      <a href="/newsletter/the-harder-you-work" class="newsletter-item">
+        <p class="newsletter-item-title">The Harder You Work</p>
+        <p class="newsletter-item-meta">April 2026 — Everyone assumed AI would mean working less.</p>
+      </a>
     </section>
 
     <div class="rule"></div>
