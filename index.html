@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Robert Echevarria — Building in the Age of AI</title>
-  <meta name="description" content="Robert Echevarria. Rationally optimistic about what's next. Running AI in a real business every single day.">
+  <meta name="description" content="Robert Echevarria. A rational take on what AI actually does. Running an AI-native operation for service businesses across North America.">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
   <meta property="og:title" content="Robert Echevarria">
-  <meta property="og:description" content="Building in the age of AI.">
+  <meta property="og:description" content="A rational take on what AI actually does.">
   <meta property="og:image" content="https://robertechevarria.com/robert-echevarria-og.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="1200">
@@ -19,17 +19,21 @@
   <link rel="canonical" href="https://robertechevarria.com">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
+    /* ──────────────────────────────────────────────
+       YELLOW ALERT — LOCKED 2026-04-28
+       Spec: brand/Robert-Personal-Brand-Identity.md
+       ────────────────────────────────────────────── */
     :root {
-      --void: #0A0806;
-      --surface: #0E0B04;
-      --gold: #FFD700;
-      --amber: #FFB400;
-      --cream: #F5F0E8;
-      --muted: #8C826E;
+      --canvas: #050505;
+      --surface: #0E0E0E;
+      --accent: #FFEB00;       /* Primary — display em, tagline, CTA fill */
+      --gold-em: #FFD700;      /* Body em — warmer tier */
+      --text: #FAFAFA;
+      --muted: #909090;
       --dim: #5A5347;
-      --rule: rgba(255, 215, 0, 0.12);
+      --rule: rgba(255, 235, 0, 0.15);
     }
 
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -42,14 +46,19 @@
     }
 
     body {
-      background: var(--void);
-      color: var(--cream);
+      background: var(--canvas);
+      color: var(--text);
       font-family: 'DM Sans', sans-serif;
       font-weight: 300;
       line-height: 1.7;
       min-height: 100vh;
       overflow-x: hidden;
     }
+
+    /* Universal italic-em — body version (warmer gold) */
+    em { font-style: italic; color: var(--gold-em); }
+    /* Display em — brighter yellow (overrides body em) */
+    h1 em, h2 em, .tagline em { color: var(--accent); }
 
     /* ── Grain overlay ── */
     body::before {
@@ -61,14 +70,14 @@
       z-index: 9999;
     }
 
-    /* ── Ambient glow ── */
+    /* ── Ambient glow — yellow at <8% opacity per spec ── */
     .glow {
       position: fixed;
       top: -20vh;
       left: -10vw;
       width: 70vw;
       height: 70vh;
-      background: radial-gradient(ellipse at center, rgba(255,215,0,0.04) 0%, transparent 70%);
+      background: radial-gradient(ellipse at center, rgba(255,235,0,0.04) 0%, transparent 70%);
       pointer-events: none;
       z-index: 0;
     }
@@ -79,7 +88,7 @@
       right: -15vw;
       width: 60vw;
       height: 60vh;
-      background: radial-gradient(ellipse at center, rgba(255,180,0,0.025) 0%, transparent 70%);
+      background: radial-gradient(ellipse at center, rgba(255,215,0,0.03) 0%, transparent 70%);
       pointer-events: none;
       z-index: 0;
     }
@@ -115,7 +124,7 @@
       font-weight: 600;
       line-height: 1.1;
       letter-spacing: -0.02em;
-      color: var(--cream);
+      color: var(--text);
       margin-bottom: 0.6rem;
     }
 
@@ -124,15 +133,15 @@
       font-size: 1.35rem;
       font-weight: 400;
       font-style: italic;
-      color: var(--gold);
+      color: var(--accent);
       letter-spacing: 0.01em;
     }
 
-    /* ── Gold rule ── */
+    /* ── Yellow rule ── */
     .rule {
       width: 60px;
       height: 1.5px;
-      background: linear-gradient(90deg, var(--gold), transparent);
+      background: linear-gradient(90deg, var(--accent), transparent);
       margin: 3rem 0;
       opacity: 0;
       animation: fadeUp 0.8s ease-out 0.5s forwards;
@@ -145,7 +154,7 @@
     }
 
     .bio p {
-      color: rgba(245, 240, 232, 0.82);
+      color: rgba(250, 250, 250, 0.82);
       margin-bottom: 1.4rem;
       font-size: 1rem;
     }
@@ -153,21 +162,17 @@
     .bio p:last-child { margin-bottom: 0; }
 
     .bio strong {
-      color: var(--cream);
+      color: var(--text);
       font-weight: 500;
+      opacity: 1;
     }
 
-    .bio em {
-      font-style: italic;
-      color: var(--amber);
-    }
-
-    /* ── What I think about ── */
+    /* ── What I'm working out ── */
     .section-label {
       font-family: 'DM Sans', sans-serif;
       font-size: 0.68rem;
       font-weight: 500;
-      letter-spacing: 0.18em;
+      letter-spacing: 0.20em;
       text-transform: uppercase;
       color: var(--muted);
       margin-bottom: 1.2rem;
@@ -185,7 +190,7 @@
     .pillars li {
       padding: 0.7rem 0;
       border-bottom: 1px solid var(--rule);
-      color: rgba(245, 240, 232, 0.72);
+      color: rgba(250, 250, 250, 0.72);
       font-size: 0.95rem;
       transition: color 0.3s ease, padding-left 0.3s ease;
     }
@@ -195,7 +200,7 @@
     }
 
     .pillars li:hover {
-      color: var(--gold);
+      color: var(--accent);
       padding-left: 0.4rem;
     }
 
@@ -230,8 +235,8 @@
     }
 
     .top-nav a:hover {
-      color: var(--gold);
-      border-bottom-color: var(--gold);
+      color: var(--accent);
+      border-bottom-color: var(--accent);
     }
 
     /* ── Newsletter ── */
@@ -258,13 +263,13 @@
       font-size: 1.05rem;
       font-weight: 400;
       font-style: italic;
-      color: var(--gold);
+      color: var(--accent);
       margin: 0 0 0.25rem 0;
       transition: color 0.3s ease;
     }
 
     .newsletter-item:hover .newsletter-item-title {
-      color: var(--cream);
+      color: var(--text);
     }
 
     .newsletter-item-meta {
@@ -273,10 +278,48 @@
       letter-spacing: 0.02em;
     }
 
+    /* ── BWM funnel (Phase 3 — subtle service-business path) ── */
+    .funnel {
+      margin: 2.5rem 0 0;
+      opacity: 0;
+      animation: fadeUp 0.8s ease-out 1.2s forwards;
+    }
+
+    .funnel-text {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      font-size: 0.92rem;
+      color: rgba(250, 250, 250, 0.62);
+      line-height: 1.65;
+      max-width: 600px;
+    }
+
+    .funnel-link {
+      color: var(--text);
+      text-decoration: none;
+      transition: color 0.3s ease;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .funnel-link em {
+      font-style: italic;
+      color: var(--gold-em);
+      transition: color 0.3s ease;
+    }
+
+    .funnel-link:hover {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+    }
+
+    .funnel-link:hover em {
+      color: var(--accent);
+    }
+
     /* ── Connect ── */
     .connect {
       opacity: 0;
-      animation: fadeUp 0.8s ease-out 1.35s forwards;
+      animation: fadeUp 0.8s ease-out 1.4s forwards;
     }
 
     .social-links {
@@ -290,7 +333,7 @@
       align-items: center;
       gap: 0.4rem;
       padding: 0.55rem 1rem;
-      border: 1px solid rgba(255,215,0,0.15);
+      border: 1px solid rgba(255,235,0,0.15);
       border-radius: 2px;
       color: var(--muted);
       text-decoration: none;
@@ -301,9 +344,9 @@
     }
 
     .social-links a:hover {
-      color: var(--gold);
-      border-color: rgba(255,215,0,0.4);
-      background: rgba(255,215,0,0.04);
+      color: var(--accent);
+      border-color: rgba(255,235,0,0.4);
+      background: rgba(255,235,0,0.04);
     }
 
     .social-links a svg {
@@ -321,7 +364,7 @@
       padding-top: 2rem;
       border-top: 1px solid var(--rule);
       opacity: 0;
-      animation: fadeUp 0.8s ease-out 1.55s forwards;
+      animation: fadeUp 0.8s ease-out 1.6s forwards;
     }
 
     footer p {
@@ -373,29 +416,28 @@
         >
       </picture>
       <h1 class="name">Robert Echevarria</h1>
-      <p class="tagline">Building in the age of AI.</p>
+      <p class="tagline">A <em>rational</em> take on what AI actually does.</p>
     </header>
 
     <div class="rule"></div>
 
-    <!-- Bio -->
+    <!-- Bio (Manifesto-Stake — Phase 2 lock) -->
     <section class="bio">
-      <p>I run AI in a real business every single day — not in theory, not in a lab, in the middle of operations where revenue depends on it working.</p>
-      <p>I founded an AI-native marketing agency that serves service businesses across North America. We build the systems that let owners stop trading time for growth. The technology does the heavy lifting. The humans do the thinking.</p>
-      <p>My perspective on AI is <em>rationally optimistic</em> — grounded in what the technology actually does today, honest about what it doesn't, and clear-eyed about where the gap is heading for businesses that wait.</p>
+      <p>Most operators don't have a <em>strategy</em> problem. They have a tooling problem. The strategy is fine. The instinct is fine. What's missing is the system that turns instinct into compounding output — and three years from now, that system is the only thing separating the operators who scaled from the ones who got priced out.</p>
+      <p>I run an AI-native marketing agency for service businesses. Our team builds the systems other operators are still figuring out how to scope. I write here for everyone else trying to figure out what's real.</p>
     </section>
 
     <div class="rule"></div>
 
-    <!-- What I write about -->
+    <!-- What I'm working out (Manifesto pillars — Phase 2 lock) -->
     <section>
-      <p class="section-label">What I think about</p>
+      <p class="section-label">What I'm working out in public</p>
       <ul class="pillars">
-        <li><span>01</span> How I'm using AI — transparency through lived experience</li>
-        <li><span>02</span> How others are using it — proof it works beyond one person</li>
-        <li><span>03</span> The edge of capabilities — staying current so you don't have to</li>
-        <li><span>04</span> What to do today — actionable, not theoretical</li>
-        <li><span>05</span> The cost of waiting — stakes framed rationally, not fear</li>
+        <li><span>01</span> What AI is actually doing in real businesses today</li>
+        <li><span>02</span> The patterns I see across operators who scaled with it</li>
+        <li><span>03</span> Where the capability frontier is moving next</li>
+        <li><span>04</span> The decisions an operator needs to make this quarter</li>
+        <li><span>05</span> What waiting another year actually costs</li>
       </ul>
     </section>
 
@@ -408,6 +450,13 @@
         <p class="newsletter-item-title">The Harder You Work</p>
         <p class="newsletter-item-meta">April 2026 — Everyone assumed AI would mean working less.</p>
       </a>
+
+      <!-- BWM funnel (Phase 3 lock — Newsletter + BWM Funnel) -->
+      <section class="funnel">
+        <p class="funnel-text">
+          For service businesses doing $1M–$5M: I run an AI-native marketing agency that builds the systems behind everything I write about. <a href="https://buildwisemedia.com" class="funnel-link">See what we build at <em>Buildwise Media</em> →</a>
+        </p>
+      </section>
     </section>
 
     <div class="rule"></div>
@@ -440,7 +489,7 @@
     </footer>
   </main>
 
-  <!-- Structured data -->
+  <!-- Structured data (Phase 5 AEO will enhance further) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -455,7 +504,13 @@
       "https://www.youtube.com/@heyroberte"
     ],
     "jobTitle": "Founder & CEO",
-    "description": "Building in the age of AI. Rationally optimistic about what's next.",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Buildwise Media",
+      "url": "https://buildwisemedia.com"
+    },
+    "description": "A rational take on what AI actually does. Running an AI-native operation for service businesses across North America.",
+    "knowsAbout": ["Artificial Intelligence", "Marketing Automation", "Service Business Operations", "AI Implementation", "Lead Generation"],
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Atlanta",
