@@ -2,8 +2,11 @@ User-agent: *
 Allow: /
 Content-Signal: search=yes, ai-train=yes, ai-input=yes
 
-# AI crawlers — explicitly permitted per BWM AI-Readiness Build Standard
+# AI crawlers — explicitly permitted per BWM Canonical Site Files lock (6 required + 2 recommended)
 User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
 Allow: /
 
 User-agent: Google-Extended
@@ -12,16 +15,17 @@ Allow: /
 User-agent: ClaudeBot
 Allow: /
 
-User-agent: Applebot-Extended
-Allow: /
-
-User-agent: CCBot
+User-agent: anthropic-ai
 Allow: /
 
 User-agent: PerplexityBot
 Allow: /
 
-User-agent: anthropic-ai
+# Recommended extras
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: CCBot
 Allow: /
 
 Sitemap: https://robertechevarria.com/sitemap.xml

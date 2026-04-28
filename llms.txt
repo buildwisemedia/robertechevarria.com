@@ -1,18 +1,20 @@
 # Robert Echevarria
 
-> Founder and CEO of Buildwise Media. Building in the age of AI — rationally optimistic about what's next.
+> A rational take on what AI actually does. Founder and CEO of Buildwise Media. Running an AI-native operation for service businesses across North America.
 
-Robert Echevarria runs AI in a real business every day. He founded an AI-native marketing agency that serves service businesses across North America, building systems that let owners stop trading time for growth.
+## About
+
+Robert Echevarria runs AI in a real business every day. He founded an AI-native marketing agency that serves service businesses doing $1M–$5M in revenue across North America, building the systems that let owners stop trading time for growth. His perspective: most operators don't have a strategy problem — they have a tooling problem. The strategy is fine. The instinct is fine. What's missing is the system that turns instinct into compounding output.
 
 ## What I Do
 
-- **Buildwise Media** — AI-powered marketing agency for service businesses ($1M–$5M revenue). Full-service marketing execution powered by AI agents and automation.
-- **The Dark Factory Newsletter** — Weekly writing about building with AI at the business level. Not theory. Not hype. What's actually working, what's actually changing, and what to do about it.
-- **LinkedIn Content** — Daily posts on AI adoption, business operations, and what the technology actually does today.
+- **Buildwise Media** — AI-native marketing agency for service businesses ($1M–$5M revenue). Full-service marketing execution powered by AI agents and automation. Atlanta, GA. https://buildwisemedia.com
+- **The Dark Factory Newsletter** — Writing about building with AI at the business level. Not theory. Not hype. What's actually working, what's actually changing, and what to do about it.
+- **LinkedIn long-form** — Posts on AI adoption, business operations, what the technology actually does today. First-person, working-it-out register.
 
 ## Pages
 
-- [Homepage](https://robertechevarria.com/): Bio, positioning, social links
+- [Homepage](https://robertechevarria.com/): Bio, positioning, social links, newsletter signup
 - [The Harder You Work](https://robertechevarria.com/newsletter/the-harder-you-work): Newsletter issue on why AI makes high performers work more, not less
 
 ## Connect

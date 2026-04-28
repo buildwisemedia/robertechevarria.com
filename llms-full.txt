@@ -1,32 +1,30 @@
 # Robert Echevarria — Full Content
 
-> Founder and CEO of Buildwise Media. Building in the age of AI — rationally optimistic about what's next.
+> A rational take on what AI actually does. Founder and CEO of Buildwise Media. Running an AI-native operation for service businesses across North America.
 
 ## About
 
-I run AI in a real business every single day — not in theory, not in a lab, in the middle of operations where revenue depends on it working.
+Most operators don't have a strategy problem. They have a tooling problem. The strategy is fine. The instinct is fine. What's missing is the system that turns instinct into compounding output — and three years from now, that system is the only thing separating the operators who scaled from the ones who got priced out.
 
-I founded an AI-native marketing agency that serves service businesses across North America. We build the systems that let owners stop trading time for growth. The technology does the heavy lifting. The humans do the thinking.
+I run an AI-native marketing agency for service businesses doing $1M–$5M in revenue. Our team builds the systems other operators are still figuring out how to scope. I write here for everyone else trying to figure out what's real.
 
-My perspective on AI is rationally optimistic — grounded in what the technology actually does today, honest about what it doesn't, and clear-eyed about where the gap is heading for businesses that wait.
+## What I'm Working Out in Public
 
-## What I Think About
-
-1. How I'm using AI — transparency through lived experience
-2. How others are using it — proof it works beyond one person
-3. The edge of capabilities — staying current so you don't have to
-4. What to do today — actionable, not theoretical
-5. The cost of waiting — stakes framed rationally, not fear
+1. What AI is actually doing in real businesses today
+2. The patterns I see across operators who scaled with it
+3. Where the capability frontier is moving next
+4. The decisions an operator needs to make this quarter
+5. What waiting another year actually costs
 
 ## Buildwise Media
 
-AI-powered marketing agency for service businesses in the $1M–$5M revenue range. Full-service marketing execution — strategy, websites, content, ads, SEO, automation — powered by AI agents and a proprietary knowledge system called the Brain. Month-to-month, no lock-in. Based in Atlanta, GA.
+AI-native marketing agency for service businesses in the $1M–$5M revenue range. Full-service marketing execution — strategy, websites, content, ads, SEO, automation — powered by AI agents and a proprietary knowledge system called the Brain. Month-to-month, no lock-in. Based in Atlanta, GA.
 
 Website: https://buildwisemedia.com
 
 ## The Dark Factory Newsletter
 
-Weekly writing about building with AI at the business level. Not theory. Not hype. What's actually working, what's actually changing, and what to do about it.
+Writing about building with AI at the business level. Not theory. Not hype. What's actually working, what's actually changing, and what to do about it.
 
 ### Issue: The Harder You Work (April 11, 2026)
 
