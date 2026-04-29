@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -60,61 +60,28 @@
   </script>
   <style>
     /* ══════════════════════════════════════════════
-       THEME SYSTEM — CSS Custom Properties
+       YELLOW ALERT — LOCKED 2026-04-28
+       Spec: brand/Robert-Personal-Brand-Identity.md
        ══════════════════════════════════════════════ */
 
     :root {
-      --transition: 0.4s cubic-bezier(0.22, 1, 0.36, 1);
-    }
-
-    /* ── DARK (default) ── */
-    [data-theme="dark"] {
-      --bg-page: #0A0806;
-      --bg-body: #0A0806;
-      --gold: #FFD700;
-      --amber: #FFB400;
-      --neon: #FFF25D;
-      --text-primary: #F5F0E8;
-      --text-body: rgba(245, 240, 232, 0.84);
-      --text-muted: #8C826E;
+      --bg-page: #050505;
+      --bg-body: #050505;
+      --accent: #FFEB00;       /* Primary — display em, masthead series */
+      --gold: #FFD700;         /* Body em — warmer tier */
+      --text-primary: #FAFAFA;
+      --text-body: rgba(250, 250, 250, 0.84);
+      --text-muted: #909090;
       --text-dim: #5A5347;
-      --text-bold: #F5F0E8;
-      --rule: rgba(255, 215, 0, 0.12);
+      --text-bold: #FAFAFA;
+      --rule: rgba(255, 235, 0, 0.15);
       --rule-solid: #FFD700;
       --quote-text: rgba(255, 215, 0, 0.85);
       --quote-border: #FFD700;
       --link-border: rgba(255, 215, 0, 0.3);
       --social-border: rgba(255, 215, 0, 0.15);
       --social-hover-bg: rgba(255, 215, 0, 0.04);
-      --toggle-bg: rgba(255, 215, 0, 0.08);
-      --toggle-border: rgba(255, 215, 0, 0.2);
-      --toggle-text: #8C826E;
-      --toggle-icon: #FFD700;
-    }
-
-    /* ── LIGHT ── */
-    [data-theme="light"] {
-      --bg-page: #F5F0E8;
-      --bg-body: #F5F0E8;
-      --gold: #B8960F;
-      --amber: #9E7D00;
-      --neon: #8A7400;
-      --text-primary: #1A1610;
-      --text-body: rgba(26, 22, 16, 0.78);
-      --text-muted: #7A7062;
-      --text-dim: #9A8E7F;
-      --text-bold: #1A1610;
-      --rule: rgba(26, 22, 16, 0.07);
-      --rule-solid: rgba(184, 150, 15, 0.35);
-      --quote-text: #8A6F00;
-      --quote-border: rgba(184, 150, 15, 0.4);
-      --link-border: rgba(184, 150, 15, 0.3);
-      --social-border: rgba(26, 22, 16, 0.09);
-      --social-hover-bg: rgba(26, 22, 16, 0.03);
-      --toggle-bg: rgba(26, 22, 16, 0.04);
-      --toggle-border: rgba(26, 22, 16, 0.10);
-      --toggle-text: #7A7062;
-      --toggle-icon: #B8960F;
+      --transition: 0.4s cubic-bezier(0.22, 1, 0.36, 1);
     }
 
     /* ══════════════════════════════════════════════
@@ -140,8 +107,8 @@
       transition: background var(--transition), color var(--transition);
     }
 
-    /* ── Film grain (dark only) ── */
-    [data-theme="dark"] body::before {
+    /* ── Film grain ── */
+    body::before {
       content: '';
       position: fixed;
       inset: 0;
@@ -150,18 +117,16 @@
       z-index: 9999;
     }
 
-    /* ── Ambient glow (dark only) ── */
+    /* ── Ambient glow — Yellow Alert: accent on top, gold-em on bottom ── */
     .glow {
       position: fixed;
       top: -20vh;
       left: -10vw;
       width: 70vw;
       height: 70vh;
-      background: radial-gradient(ellipse at center, rgba(255,215,0,0.04) 0%, transparent 70%);
+      background: radial-gradient(ellipse at center, rgba(255,235,0,0.04) 0%, transparent 70%);
       pointer-events: none;
       z-index: 0;
-      opacity: 1;
-      transition: opacity var(--transition);
     }
 
     .glow-bottom {
@@ -170,16 +135,9 @@
       right: -15vw;
       width: 60vw;
       height: 60vh;
-      background: radial-gradient(ellipse at center, rgba(255,180,0,0.025) 0%, transparent 70%);
+      background: radial-gradient(ellipse at center, rgba(255,215,0,0.03) 0%, transparent 70%);
       pointer-events: none;
       z-index: 0;
-      opacity: 1;
-      transition: opacity var(--transition);
-    }
-
-    [data-theme="light"] .glow,
-    [data-theme="light"] .glow-bottom {
-      opacity: 0;
     }
 
     /* ══════════════════════════════════════════════
@@ -204,63 +162,6 @@
       html { font-size: 16px; }
       .newsletter { padding: 4vh 1.25rem 6vh; }
     }
-
-    /* ══════════════════════════════════════════════
-       TOGGLE
-       ══════════════════════════════════════════════ */
-
-    .theme-toggle {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      z-index: 10000;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 14px;
-      background: var(--toggle-bg);
-      border: 1px solid var(--toggle-border);
-      border-radius: 20px;
-      cursor: pointer;
-      font-family: 'DM Sans', sans-serif;
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--toggle-text);
-      transition: all var(--transition);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-    }
-
-    .theme-toggle:hover {
-      border-color: var(--toggle-icon);
-      color: var(--toggle-icon);
-    }
-
-    .theme-toggle svg {
-      width: 14px;
-      height: 14px;
-      fill: var(--toggle-icon);
-      transition: fill var(--transition), transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
-    }
-
-    .theme-toggle:hover svg {
-      transform: rotate(15deg);
-    }
-
-    .toggle-label-dark,
-    .toggle-label-light { display: none; }
-
-    [data-theme="dark"] .toggle-label-light { display: inline; }
-    [data-theme="dark"] .toggle-label-dark { display: none; }
-    [data-theme="dark"] .icon-sun { display: block; }
-    [data-theme="dark"] .icon-moon { display: none; }
-
-    [data-theme="light"] .toggle-label-dark { display: inline; }
-    [data-theme="light"] .toggle-label-light { display: none; }
-    [data-theme="light"] .icon-sun { display: none; }
-    [data-theme="light"] .icon-moon { display: block; }
 
     /* ══════════════════════════════════════════════
        TYPOGRAPHY & ELEMENTS
@@ -307,7 +208,7 @@
       font-size: 0.8rem;
       font-weight: 400;
       font-style: italic;
-      color: var(--gold);
+      color: var(--accent);
       letter-spacing: 0.01em;
       margin: 2px 0 0 0;
       transition: color var(--transition);
@@ -352,7 +253,7 @@
       font-size: 1rem;
       font-weight: 600;
       line-height: 1.3;
-      color: var(--amber);
+      color: var(--gold);
       margin: 0 0 1rem 0;
       transition: color var(--transition);
     }
@@ -495,7 +396,6 @@
 
     @media (max-width: 480px) {
       .headline { font-size: 1.7rem; }
-      .theme-toggle { top: 12px; right: 12px; padding: 6px 10px; font-size: 10px; }
     }
   </style>
 </head>
@@ -506,14 +406,6 @@
 
     <div class="glow"></div>
     <div class="glow-bottom"></div>
-
-    <!-- ═══ THEME TOGGLE ═══ -->
-    <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark mode">
-      <svg class="icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg>
-      <svg class="icon-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="currentColor"/></svg>
-      <span class="toggle-label-light">Light</span>
-      <span class="toggle-label-dark">Dark</span>
-    </button>
 
     <main class="newsletter">
 
@@ -736,26 +628,6 @@
     </main>
 
   <script>
-    /* ── Theme Toggle ── */
-    const root = document.documentElement;
-    const toggle = document.getElementById('themeToggle');
-    const stored = localStorage.getItem('df-theme');
-
-    if (stored) root.setAttribute('data-theme', stored);
-
-    toggle.addEventListener('click', () => {
-      const current = root.getAttribute('data-theme');
-      const next = current === 'dark' ? 'light' : 'dark';
-      root.setAttribute('data-theme', next);
-      localStorage.setItem('df-theme', next);
-      window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push({
-        event: 'theme_toggle',
-        theme_selected: next,
-        page_type: 'newsletter'
-      });
-    });
-
     /* ── Social Link Click Tracking ── */
     document.querySelectorAll('.social-links a').forEach(function(link) {
       link.addEventListener('click', function() {
