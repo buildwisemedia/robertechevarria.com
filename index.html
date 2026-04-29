@@ -20,6 +20,16 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- Google tag (gtag.js) — Phase 6 PROJ-PB-BUILD-001 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-39NT50LZYT"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-39NT50LZYT');
+  </script>
+
   <style>
     /* ──────────────────────────────────────────────
        YELLOW ALERT — LOCKED 2026-04-28
@@ -518,6 +528,50 @@
       "addressCountry": "US"
     }
   }
+  </script>
+
+  <!-- Conversion event wiring — Phase 6 PROJ-PB-BUILD-001 -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var navNewsletter = document.querySelector('.top-nav a[href="#newsletter"]');
+      if (navNewsletter) {
+        navNewsletter.addEventListener('click', function() {
+          gtag('event', 'newsletter_signup_intent', { cta_source: 'top_nav' });
+        });
+      }
+
+      var funnelLink = document.querySelector('.funnel-link');
+      if (funnelLink) {
+        funnelLink.addEventListener('click', function() {
+          gtag('event', 'bwm_funnel_click', { link_destination: 'buildwisemedia.com' });
+        });
+      }
+
+      var socialMap = {
+        'linkedin.com': 'linkedin',
+        'x.com': 'x',
+        'instagram.com': 'instagram',
+        'youtube.com': 'youtube'
+      };
+      document.querySelectorAll('.social-links a').forEach(function(a) {
+        var platform = 'unknown';
+        Object.keys(socialMap).forEach(function(host) {
+          if (a.href.indexOf(host) !== -1) platform = socialMap[host];
+        });
+        a.addEventListener('click', function() {
+          gtag('event', 'social_outbound', { platform: platform });
+        });
+      });
+
+      document.querySelectorAll('.newsletter-item').forEach(function(item) {
+        item.addEventListener('click', function() {
+          var titleEl = item.querySelector('.newsletter-item-title');
+          gtag('event', 'essay_read_intent', {
+            essay_title: titleEl ? titleEl.innerText : 'unknown'
+          });
+        });
+      });
+    });
   </script>
 </body>
 </html>
