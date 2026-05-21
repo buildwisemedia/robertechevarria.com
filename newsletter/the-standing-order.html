@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Dark Factory — We Were the Bottleneck of Our Own AI</title>
+  <meta name="description" content="The bottleneck wasn't the model. It was me. The fix was a pattern we built together.">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+
+  <!-- OG Tags -->
+  <meta property="og:title" content="The Dark Factory — We Were the Bottleneck of Our Own AI">
+  <meta property="og:description" content="The bottleneck wasn't the model. It was me. The fix was a pattern we built together.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://robertechevarria.com/newsletter/the-standing-order">
+  <meta property="og:image" content="https://robertechevarria.com/og-the-standing-order.jpg">
+  <meta property="og:site_name" content="The Dark Factory">
+  <meta property="article:author" content="Robert Echevarria">
+  <meta property="article:published_time" content="2026-05-21">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="The Dark Factory — We Were the Bottleneck of Our Own AI">
+  <meta name="twitter:description" content="The bottleneck wasn't the model. It was me. The fix was a pattern we built together.">
+  <meta name="twitter:image" content="https://robertechevarria.com/og-the-standing-order.jpg">
+  <meta name="twitter:creator" content="@heyroberte">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://robertechevarria.com/newsletter/the-standing-order">
+
+  <!-- GTM (same container as BWM — cross-property tracking via GA4 streams) -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-P5JSD86L');</script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "We Were the Bottleneck of Our Own AI. One Pattern Fixed It.",
+    "author": {
+      "@type": "Person",
+      "name": "Robert Echevarria",
+      "url": "https://robertechevarria.com"
+    },
+    "datePublished": "2026-05-21",
+    "publisher": {
+      "@type": "Person",
+      "name": "Robert Echevarria"
+    },
+    "description": "The bottleneck wasn't the model. It was me. The fix was a pattern we built together.",
+    "mainEntityOfPage": "https://robertechevarria.com/newsletter/the-standing-order"
+  }
+  </script>
+  <style>
+    /* ══════════════════════════════════════════════
+       YELLOW ALERT — LOCKED 2026-04-28
+       Spec: brand/Robert-Personal-Brand-Identity.md
+       ══════════════════════════════════════════════ */
+
+    :root {
+      --bg-page: #050505;
+      --bg-body: #050505;
+      --accent: #FFEB00;       /* Primary — display em, masthead series */
+      --gold: #FFD700;         /* Body em — warmer tier */
+      --text-primary: #FAFAFA;
+      --text-body: rgba(250, 250, 250, 0.84);
+      --text-muted: #909090;
+      --text-dim: #5A5347;
+      --text-bold: #FAFAFA;
+      --rule: rgba(255, 235, 0, 0.15);
+      --rule-solid: #FFD700;
+      --quote-text: rgba(255, 215, 0, 0.85);
+      --quote-border: #FFD700;
+      --link-border: rgba(255, 215, 0, 0.3);
+      --social-border: rgba(255, 215, 0, 0.15);
+      --social-hover-bg: rgba(255, 215, 0, 0.04);
+      --transition: 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html {
+      font-size: 18px;
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      background: var(--bg-page);
+      color: var(--text-body);
+      font-family: 'DM Sans', 'Helvetica Neue', Arial, sans-serif;
+      font-weight: 300;
+      line-height: 1.78;
+      min-height: 100vh;
+      transition: background var(--transition), color var(--transition);
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 9999;
+    }
+
+    .glow {
+      position: fixed;
+      top: -20vh; left: -10vw;
+      width: 70vw; height: 70vh;
+      background: radial-gradient(ellipse at center, rgba(255,235,0,0.04) 0%, transparent 70%);
+      pointer-events: none; z-index: 0;
+    }
+    .glow-bottom {
+      position: fixed;
+      bottom: -30vh; right: -15vw;
+      width: 60vw; height: 60vh;
+      background: radial-gradient(ellipse at center, rgba(255,215,0,0.03) 0%, transparent 70%);
+      pointer-events: none; z-index: 0;
+    }
+
+    .newsletter {
+      position: relative; z-index: 1;
+      max-width: 640px; margin: 0 auto;
+      padding: 6vh 2rem 8vh;
+    }
+    @media (min-width: 680px) { .newsletter { padding: 6vh 48px 8vh; } }
+    @media (max-width: 480px) {
+      html { font-size: 16px; }
+      .newsletter { padding: 4vh 1.25rem 6vh; }
+    }
+
+    .gold-rule {
+      width: 60px; height: 1.5px;
+      background: linear-gradient(90deg, var(--rule-solid), transparent);
+      margin: 2.2rem 0;
+    }
+    .gold-rule--thin {
+      width: 40px; height: 1px;
+      background: linear-gradient(90deg, var(--rule-solid), transparent);
+      opacity: 0.5; margin: 2.2rem 0;
+    }
+    .full-rule { width: 100%; height: 1px; background: var(--rule); margin: 1.5rem 0; }
+
+    .masthead-name {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.15rem; font-weight: 600;
+      color: var(--text-primary);
+      letter-spacing: -0.01em; margin: 0;
+    }
+    .masthead-series {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 0.8rem; font-weight: 400; font-style: italic;
+      color: var(--accent);
+      letter-spacing: 0.01em; margin: 2px 0 0 0;
+    }
+    .masthead-date {
+      font-size: 0.61rem; font-weight: 400;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--text-dim);
+      margin: 8px 0 0 0;
+    }
+
+    .headline {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 2.1rem; font-weight: 600;
+      line-height: 1.1; letter-spacing: -0.02em;
+      color: var(--text-primary);
+      margin: 0;
+    }
+    .headline em {
+      font-style: italic; font-weight: 500;
+      color: var(--accent);
+      padding: 0 0.03em;
+    }
+    @media (max-width: 480px) { .headline { font-size: 1.75rem; } }
+
+    .section-head {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.28rem; font-weight: 600;
+      line-height: 1.2;
+      color: var(--text-primary);
+      margin: 0 0 1.1rem 0;
+    }
+    .section-head em {
+      font-style: italic; font-weight: 500;
+      color: var(--accent);
+      padding: 0 0.04em;
+    }
+
+    .section-eyebrow {
+      font-size: 0.58rem; font-weight: 500;
+      letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--text-muted);
+      margin: 0 0 0.65rem 0;
+      display: inline-flex; align-items: center; gap: 0.65rem;
+    }
+    .section-eyebrow .num { color: var(--accent); font-weight: 700; }
+
+    .body-text { margin: 0 0 1rem 0; }
+    .body-text:last-child { margin-bottom: 0; }
+    .body-text strong { color: var(--text-bold); font-weight: 500; }
+    .body-text em {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-style: italic; font-weight: 400;
+      color: var(--gold);
+      font-size: 1.03em;
+      padding: 0 0.02em;
+    }
+
+    /* ── Pull quote — for hook + closing line ── */
+    .pull-quote { padding: 2.2rem 0; }
+    .pull-quote-inner {
+      border-left: 2px solid var(--quote-border);
+      padding-left: 1.2rem;
+    }
+    .pull-quote-text {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.1rem; font-weight: 400; font-style: italic;
+      line-height: 1.5;
+      color: var(--quote-text);
+      margin: 0;
+    }
+
+    /* ── Hook treatment — used once, at the top ── */
+    .hook {
+      margin: 1.5rem 0 2rem;
+      padding: 1.8rem 0 1.6rem;
+      border-top: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+    }
+    .hook-text {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-style: italic; font-weight: 400;
+      font-size: 1.18rem; line-height: 1.5;
+      color: var(--text-primary);
+      margin: 0;
+    }
+    .hook-drivers {
+      display: block;
+      margin-top: 1.2rem;
+      font-family: 'DM Sans', sans-serif;
+      font-style: normal; font-weight: 700;
+      font-size: 0.66rem; letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--accent);
+      line-height: 1.8;
+    }
+    .hook-drivers .dot { color: var(--text-dim); padding: 0 0.4em; }
+
+    /* ── Coda — italic emphasis at end of a section ── */
+    .coda {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-style: italic; font-weight: 400;
+      font-size: 1.04rem; line-height: 1.5;
+      color: var(--quote-text);
+      margin: 1.4rem 0 0;
+    }
+
+    /* ── Four-step block (§ 02) ── */
+    .steps { margin: 1.8rem 0 0; }
+    .step {
+      display: grid;
+      grid-template-columns: 3rem 1fr;
+      gap: 1rem;
+      padding: 1.1rem 0;
+      border-top: 1px solid var(--rule);
+      align-items: baseline;
+    }
+    .step:last-child { border-bottom: 1px solid var(--rule); }
+    .step .num {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-style: italic; font-weight: 500;
+      font-size: 1.6rem; line-height: 1;
+      color: var(--accent);
+    }
+    .step .step-label {
+      display: block;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 700; font-size: 0.72rem;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--text-primary);
+      margin-bottom: 0.4rem;
+    }
+    .step .step-body { color: var(--text-body); font-size: 0.94em; line-height: 1.6; }
+
+    /* ── Diagram surface ── */
+    .diagram {
+      margin: 2.2rem 0;
+    }
+    .diagram svg {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-width: 100%;
+    }
+    .diagram-caption {
+      margin-top: 0.85rem;
+      font-size: 0.62rem; font-weight: 500;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--text-dim);
+      line-height: 1.7;
+    }
+    .diagram-caption .accent { color: var(--gold); }
+
+    /* ── SVG element styles (shared) ── */
+    .svg-axis { stroke: var(--rule); stroke-width: 1; }
+    .svg-label { fill: var(--text-muted); font-family: 'DM Sans', sans-serif; font-size: 9px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; }
+    .svg-annot { fill: var(--text-primary); font-family: 'Playfair Display', serif; font-size: 10px; font-style: italic; }
+    .svg-num-big { fill: var(--accent); font-family: 'Playfair Display', serif; font-size: 56px; font-weight: 500; font-style: italic; }
+    .svg-num-sub { fill: var(--text-muted); font-family: 'DM Sans', sans-serif; font-size: 8px; letter-spacing: 0.16em; text-transform: uppercase; }
+    .svg-node-label { fill: var(--text-primary); font-family: 'DM Sans', sans-serif; font-size: 9.5px; font-weight: 500; letter-spacing: 0.04em; }
+    .svg-node-stroke { stroke: var(--accent); stroke-width: 1.25; fill: none; }
+    .svg-arrow { stroke: var(--accent); stroke-width: 1.5; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+    .svg-arrow-muted { stroke: var(--text-muted); stroke-width: 1; fill: none; stroke-linecap: round; }
+    .svg-bar-actual { fill: var(--accent); }
+    .svg-bar-dispatch { fill: var(--text-muted); opacity: 0.55; }
+    .svg-bar-recontext { fill: var(--text-muted); opacity: 0.32; }
+    .svg-bar-clarify { fill: var(--text-dim); }
+    .svg-bar-audit { fill: var(--accent); opacity: 0.35; }
+    .svg-bar-receipt { fill: var(--text-muted); opacity: 0.32; }
+
+    /* ── CTA section (final) ── */
+    .cta-section {
+      margin-top: 1rem;
+      padding: 1.8rem 0 0;
+      border-top: 1px solid var(--rule);
+    }
+    .cta-section .body-text a {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid var(--link-border);
+      padding-bottom: 1px;
+      transition: border-color var(--transition);
+    }
+    .cta-section .body-text a:hover { border-bottom-color: var(--accent); }
+
+    /* ── Section label / Links ── */
+    .section-label {
+      font-size: 0.56rem; font-weight: 500;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--text-muted);
+      margin: 0 0 1rem 0;
+    }
+    a.text-link {
+      font-size: 0.72rem; font-weight: 500;
+      color: var(--gold); text-decoration: none;
+      border-bottom: 1px solid var(--link-border);
+      padding-bottom: 2px;
+    }
+    a.text-link:hover { border-color: var(--gold); }
+
+    /* ── Social / Footer / Sign-off ── */
+    .social-links { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .social-links a {
+      display: inline-flex; align-items: center;
+      padding: 0.45rem 0.8rem;
+      border: 1px solid var(--social-border);
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.67rem; font-weight: 400; letter-spacing: 0.02em;
+      transition: all 0.3s ease;
+    }
+    .social-links a:hover {
+      color: var(--gold); border-color: var(--gold);
+      background: var(--social-hover-bg);
+    }
+    .footer-text {
+      font-size: 0.61rem; font-weight: 300;
+      color: var(--text-dim); line-height: 1.5;
+    }
+    .footer-text a { color: var(--text-muted); text-decoration: underline; }
+    .sign-off { font-size: 0.78rem; font-weight: 400; color: var(--text-muted); }
+    .newsletter-desc {
+      font-size: 0.72rem; font-weight: 300; font-style: italic;
+      line-height: 1.65; color: var(--text-dim);
+    }
+
+    /* ── Fade-in animation ── */
+    .fade-in {
+      opacity: 0; transform: translateY(12px);
+      animation: fadeUp 0.7s ease-out forwards;
+    }
+    @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+    .fade-in:nth-child(1) { animation-delay: 0.1s; }
+    .fade-in:nth-child(2) { animation-delay: 0.2s; }
+    .fade-in:nth-child(3) { animation-delay: 0.3s; }
+  </style>
+</head>
+
+<body>
+  <!-- GTM noscript -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P5JSD86L" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  <div class="glow"></div>
+  <div class="glow-bottom"></div>
+
+  <main class="newsletter">
+
+    <!-- ═══ MASTHEAD ═══ -->
+    <header class="fade-in">
+      <p class="masthead-name">Robert Echevarria</p>
+      <p class="masthead-series">The Dark Factory</p>
+      <p class="masthead-date">May 21, 2026</p>
+    </header>
+
+    <div class="gold-rule fade-in"></div>
+
+    <!-- ═══ HEADLINE ═══ -->
+    <h1 class="headline fade-in" style="margin-bottom:1.5rem;">We were the bottleneck of our own AI. One pattern <em>fixed</em> it.</h1>
+
+    <!-- ═══ HOOK ═══ -->
+    <div class="hook">
+      <p class="hook-text">
+        I build complex projects with an AI co-builder. We go down rabbit holes. I lose track of what's done. So does the AI. So we built one prompt that QAs every previous phase, confirms where we are in the system, builds the next phase, and loops until the project ships.
+      </p>
+      <span class="hook-drivers">
+        Less time<span class="dot">·</span>Fewer tokens<span class="dot">·</span>Less frustration<span class="dot">·</span>Better quality
+      </span>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         § 01 — THE PROBLEM
+         ═══════════════════════════════════════════════════════════ -->
+    <section>
+      <p class="section-eyebrow"><span class="num">§ 01</span> The Problem</p>
+      <h2 class="section-head">Both of us were getting <em>lost</em>.</h2>
+
+      <p class="body-text">The clearest failure happened in the middle of a build with too many moving parts: a phase map, intake logic, copy blocks, QA criteria, handoff notes, and a growing list of small decisions that all depended on each other.</p>
+
+      <p class="body-text">We were three phases in. One part looked finished. Another part was half-finished. A third part had passed in the previous session, but only because neither of us noticed that the acceptance criteria had changed two steps later. The AI returned output that built confidently on top of something broken from two phases ago. I opened the session and could not tell what state the project was in. The AI opened the session and could not tell either. The prior session had ended. The thread had moved on. The state was now implied, scattered, and fragile.</p>
+
+      <p class="body-text">The problem was not intelligence. The problem was <em>state</em>.</p>
+
+      <!-- @r020:F2 proof: session-state-divergence-diagnostic visualizes how the human estimate, AI estimate, and reality diverged across sessions until the audit landed -->
+      <figure class="diagram">
+        <svg viewBox="0 0 560 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Session-state divergence chart: human estimate, AI estimate, and reality drift apart across sessions until an audit checkpoint restores alignment.">
+          <!-- background grid hairlines -->
+          <line x1="40" y1="50" x2="540" y2="50" class="svg-axis" opacity="0.4"/>
+          <line x1="40" y1="120" x2="540" y2="120" class="svg-axis" opacity="0.4"/>
+          <line x1="40" y1="190" x2="540" y2="190" class="svg-axis" opacity="0.4"/>
+          <line x1="40" y1="240" x2="540" y2="240" class="svg-axis"/>
+
+          <!-- y axis label -->
+          <text x="40" y="30" class="svg-label">Project state · phases reached</text>
+          <text x="40" y="262" class="svg-label">Session 1</text>
+          <text x="120" y="262" class="svg-label">2</text>
+          <text x="180" y="262" class="svg-label">3</text>
+          <text x="240" y="262" class="svg-label">4</text>
+          <text x="300" y="262" class="svg-label">5</text>
+          <text x="430" y="262" class="svg-label">6</text>
+          <text x="500" y="262" class="svg-label">7</text>
+
+          <!-- shaded gap zone (waste) - between Robert line and AI line before audit -->
+          <path d="M 40 195 L 100 175 L 175 145 L 240 110 L 305 75 L 360 60 L 360 200 L 305 175 L 240 195 L 175 215 L 100 220 L 40 215 Z" fill="#FFEB00" opacity="0.05"/>
+          <text x="180" y="135" class="svg-label" style="opacity:0.9" fill="#FFD700">Wasted tokens · hours · trust</text>
+
+          <!-- AUDIT INSTALLED vertical marker -->
+          <line x1="360" y1="50" x2="360" y2="240" stroke="#FFEB00" stroke-width="1" stroke-dasharray="3 3" opacity="0.7"/>
+          <text x="365" y="60" fill="#FFEB00" font-family="DM Sans, sans-serif" font-size="9" font-weight="700" letter-spacing="0.15em">AUDIT INSTALLED</text>
+
+          <!-- Reality line (yellow solid) -->
+          <path d="M 40 220 L 100 200 L 175 180 L 240 160 L 305 140 L 360 130 L 430 95 L 500 60" stroke="#FFEB00" stroke-width="2" fill="none" stroke-linecap="round"/>
+          <circle cx="500" cy="60" r="3" fill="#FFEB00"/>
+          <text x="475" y="48" fill="#FFEB00" font-family="DM Sans, sans-serif" font-size="9" font-weight="700" letter-spacing="0.1em" text-anchor="end">REALITY</text>
+
+          <!-- Robert estimate (dashed muted, drifts above) -->
+          <path d="M 40 215 L 100 175 L 175 130 L 240 95 L 305 65 L 360 55" stroke="#909090" stroke-width="1.25" fill="none" stroke-dasharray="4 3" stroke-linecap="round"/>
+          <path d="M 360 55 L 430 100 L 500 65" stroke="#909090" stroke-width="1.25" fill="none" stroke-dasharray="4 3" stroke-linecap="round"/>
+          <text x="305" y="58" fill="#909090" font-family="DM Sans, sans-serif" font-size="9" letter-spacing="0.1em" text-anchor="end">WHAT I THOUGHT</text>
+
+          <!-- AI estimate (dashed dim, drifts below) -->
+          <path d="M 40 230 L 100 215 L 175 220 L 240 215 L 305 220 L 360 215" stroke="#5A5347" stroke-width="1.25" fill="none" stroke-dasharray="4 3" stroke-linecap="round"/>
+          <path d="M 360 215 L 430 105 L 500 65" stroke="#5A5347" stroke-width="1.25" fill="none" stroke-dasharray="4 3" stroke-linecap="round"/>
+          <text x="305" y="232" fill="#5A5347" font-family="DM Sans, sans-serif" font-size="9" letter-spacing="0.1em" text-anchor="end">WHAT AI THOUGHT</text>
+        </svg>
+        <figcaption class="diagram-caption">Fig. 01 — Before the audit, we each thought a different project was being built. <span class="accent">The gap was tokens, hours, and trust.</span></figcaption>
+      </figure>
+
+      <p class="body-text">Across sessions, across phases, across days, neither of us could reliably answer the questions that mattered: what is done, what is half-done, what is already broken, and what is safe to build on top of?</p>
+
+      <p class="body-text">Multiply that across several complex projects and the rabbit holes compound. The AI builds on a broken foundation. I miss the broken foundation because I am tired and the work looks like progress. By the time we notice, we have burned tokens, hours, and trust on output that has to be ripped out.</p>
+
+      <p class="body-text">This was not a prompt problem. This was a coordination problem between two collaborators who had no shared, persistent memory of where the work actually stood.</p>
+
+      <p class="coda">We needed something neither of us could supply alone: a standing checkpoint that lived above both of us.</p>
+    </section>
+
+    <div class="gold-rule"></div>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         § 02 — THE BREAKTHROUGH
+         ═══════════════════════════════════════════════════════════ -->
+    <section>
+      <p class="section-eyebrow"><span class="num">§ 02</span> The Breakthrough</p>
+      <h2 class="section-head">How we built the <em>loop</em>.</h2>
+
+      <p class="body-text">I got tired of opening every session by re-litigating the same uncertainty. I asked the AI why we kept losing the plot at the exact moment the work was supposed to accelerate.</p>
+
+      <p class="body-text">The useful answer came back as a counter-question: what if the prompt that opens every session is the same prompt, and it does not try to build anything until it has first audited the project state?</p>
+
+      <p class="body-text">That changed the design.</p>
+
+      <div class="steps">
+        <div class="step">
+          <div class="num">01</div>
+          <div>
+            <span class="step-label">Audit</span>
+            <div class="step-body">Before doing any new work, the prompt walks the prior phase outputs, checks them against that phase's done criteria, and flags anything incomplete, broken, or skipped. No new code. No new copy. No new build until the audit passes.</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="num">02</div>
+          <div>
+            <span class="step-label">Confirm state</span>
+            <div class="step-body">The prompt writes a short statement of where the project is: what has been verified, what the next uncompleted phase is, and what is gating it. This statement becomes the receipt. I can read it quickly. The AI can work from it directly. Neither of us has to pretend the chat history is a reliable operating record.</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="num">03</div>
+          <div>
+            <span class="step-label">Build the next phase</span>
+            <div class="step-body">Only now does work begin. The scope is exactly one phase. The done criteria are already known. The output is judged against the same standard that will be audited next time.</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="num">04</div>
+          <div>
+            <span class="step-label">Loop</span>
+            <div class="step-body">When the phase ships, the pointer advances. The next session opens, reads the same standing prompt, and starts with the audit again. The loop keeps running until there is no next phase to advance to.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- @r020:F4 curiosity: audit-loop-diagram visualizes the four-step cycle with the operator positioned outside as editor, not dispatcher -->
+      <figure class="diagram" style="margin-top:2.5rem;">
+        <svg viewBox="0 0 560 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Audit loop diagram: four named nodes — Audit, Confirm state, Build next phase, Advance pointer — connected in a clockwise cycle around a central Standing Prompt, with YOU labeled outside the loop as editor.">
+          <!-- center label -->
+          <text x="280" y="180" text-anchor="middle" fill="#FFD700" font-family="Playfair Display, serif" font-style="italic" font-size="13" font-weight="500">Standing</text>
+          <text x="280" y="198" text-anchor="middle" fill="#FFD700" font-family="Playfair Display, serif" font-style="italic" font-size="13" font-weight="500">prompt</text>
+
+          <!-- 4 nodes positioned around center (280, 190) -->
+          <!-- TOP: Audit -->
+          <circle cx="280" cy="80" r="38" class="svg-node-stroke"/>
+          <text x="280" y="76" text-anchor="middle" class="svg-node-label" font-weight="700">AUDIT</text>
+          <text x="280" y="90" text-anchor="middle" fill="#909090" font-family="DM Sans, sans-serif" font-size="7.5" letter-spacing="0.08em">walk prior outputs</text>
+
+          <!-- RIGHT: Confirm state -->
+          <circle cx="450" cy="190" r="38" class="svg-node-stroke"/>
+          <text x="450" y="183" text-anchor="middle" class="svg-node-label" font-weight="700">CONFIRM</text>
+          <text x="450" y="195" text-anchor="middle" class="svg-node-label" font-weight="700">STATE</text>
+          <text x="450" y="208" text-anchor="middle" fill="#909090" font-family="DM Sans, sans-serif" font-size="7.5" letter-spacing="0.08em">write the receipt</text>
+
+          <!-- BOTTOM: Build phase -->
+          <circle cx="280" cy="300" r="38" class="svg-node-stroke"/>
+          <text x="280" y="295" text-anchor="middle" class="svg-node-label" font-weight="700">BUILD</text>
+          <text x="280" y="307" text-anchor="middle" class="svg-node-label" font-weight="700">NEXT PHASE</text>
+          <text x="280" y="320" text-anchor="middle" fill="#909090" font-family="DM Sans, sans-serif" font-size="7.5" letter-spacing="0.08em">one bounded scope</text>
+
+          <!-- LEFT: Advance pointer -->
+          <circle cx="110" cy="190" r="38" class="svg-node-stroke"/>
+          <text x="110" y="183" text-anchor="middle" class="svg-node-label" font-weight="700">ADVANCE</text>
+          <text x="110" y="195" text-anchor="middle" class="svg-node-label" font-weight="700">POINTER</text>
+          <text x="110" y="208" text-anchor="middle" fill="#909090" font-family="DM Sans, sans-serif" font-size="7.5" letter-spacing="0.08em">next phase queued</text>
+
+          <!-- clockwise arrows between nodes (Audit → Confirm → Build → Advance → Audit) -->
+          <!-- AUDIT → CONFIRM (top-right curve) -->
+          <path d="M 316 96 A 110 110 0 0 1 414 154" class="svg-arrow"/>
+          <path d="M 408 146 L 414 154 L 405 161" class="svg-arrow"/>
+          <!-- CONFIRM → BUILD (right-bottom curve) -->
+          <path d="M 432 222 A 110 110 0 0 1 316 285" class="svg-arrow"/>
+          <path d="M 322 277 L 316 285 L 307 281" class="svg-arrow"/>
+          <!-- BUILD → ADVANCE (bottom-left curve) -->
+          <path d="M 244 285 A 110 110 0 0 1 146 226" class="svg-arrow"/>
+          <path d="M 153 220 L 146 226 L 154 235" class="svg-arrow"/>
+          <!-- ADVANCE → AUDIT (left-top curve) -->
+          <path d="M 128 154 A 110 110 0 0 1 244 94" class="svg-arrow"/>
+          <path d="M 238 102 L 244 94 L 253 99" class="svg-arrow"/>
+
+          <!-- YOU pin outside the loop (top-right corner area) -->
+          <line x1="495" y1="78" x2="450" y2="115" class="svg-arrow-muted" stroke-dasharray="3 3"/>
+          <text x="540" y="62" text-anchor="end" fill="#FFEB00" font-family="DM Sans, sans-serif" font-size="11" font-weight="700" letter-spacing="0.16em">YOU</text>
+          <text x="540" y="76" text-anchor="end" fill="#909090" font-family="Playfair Display, serif" font-style="italic" font-size="10">Editor of the standing order</text>
+          <text x="540" y="90" text-anchor="end" fill="#909090" font-family="Playfair Display, serif" font-style="italic" font-size="10">— reads the receipt, walks away</text>
+        </svg>
+        <figcaption class="diagram-caption">Fig. 02 — The standing prompt opens every session. <span class="accent">The audit runs first. The loop only advances when the previous phase passes.</span></figcaption>
+      </figure>
+
+      <p class="body-text">That is the whole pattern. Four steps, written once, applied to every project. No clever wording. No magic. The intelligence is in the <em>insistence</em> on the audit before the build.</p>
+
+      <p class="body-text">I wrote a single note in the project log the first morning the loop ran a project to completion on its own: <em>"Should this become standard for all projects?"</em></p>
+
+      <p class="body-text">It did.</p>
+    </section>
+
+    <div class="gold-rule"></div>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         § 03 — FIRST-ORDER: TIME AND TOKENS
+         ═══════════════════════════════════════════════════════════ -->
+    <section>
+      <p class="section-eyebrow"><span class="num">§ 03</span> First-Order Consequence</p>
+      <h2 class="section-head">Time and <em>tokens</em>.</h2>
+
+      <p class="body-text">Two things collapsed at once.</p>
+
+      <p class="body-text">Time collapsed because I stopped being the dispatcher. The morning ritual disappeared: what is the state of project A, project B, project C; what is gated on what; what verification still has to happen; what can safely move today. The standing prompt did that in the first thirty seconds of every session and wrote the receipt I needed to glance at.</p>
+
+      <!-- @r020:F2 proof: time-allocation-before-after stacked bar shows what fraction of a session went to dispatching, re-explaining, and clarifying versus actual work, before and after the standing prompt -->
+      <figure class="diagram">
+        <svg viewBox="0 0 560 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Before-and-after stacked bar chart showing how a typical session's time was allocated. Before: dispatching, re-explaining context, clarifying back-and-forth crowded out actual work. After: a small audit and receipt scan, then actual work dominates.">
+          <!-- BEFORE bar -->
+          <text x="40" y="40" class="svg-label" fill="#FAFAFA" font-weight="700">BEFORE</text>
+          <text x="540" y="40" class="svg-label" text-anchor="end">One typical session</text>
+          <!-- bar (40 to 540, width 500) -->
+          <rect x="40" y="55" width="200" height="34" class="svg-bar-dispatch"/>
+          <rect x="240" y="55" width="140" height="34" class="svg-bar-recontext"/>
+          <rect x="380" y="55" width="80" height="34" class="svg-bar-clarify"/>
+          <rect x="460" y="55" width="80" height="34" class="svg-bar-actual"/>
+          <!-- labels under -->
+          <text x="40" y="108" class="svg-label">Dispatching state</text>
+          <text x="240" y="108" class="svg-label">Re-explaining context</text>
+          <text x="380" y="108" class="svg-label">Clarifying</text>
+          <text x="540" y="108" class="svg-label" fill="#FFEB00" text-anchor="end" font-weight="700">Actual work</text>
+
+          <!-- AFTER bar -->
+          <text x="40" y="155" class="svg-label" fill="#FAFAFA" font-weight="700">AFTER</text>
+          <text x="540" y="155" class="svg-label" text-anchor="end">Same hour. Different shape.</text>
+          <rect x="40" y="170" width="30" height="34" class="svg-bar-audit"/>
+          <rect x="70" y="170" width="40" height="34" class="svg-bar-receipt"/>
+          <rect x="110" y="170" width="430" height="34" class="svg-bar-actual"/>
+          <!-- labels under -->
+          <text x="40" y="223" class="svg-label">Audit</text>
+          <text x="80" y="223" class="svg-label">Receipt</text>
+          <text x="320" y="223" class="svg-label" fill="#FFEB00" text-anchor="middle" font-weight="700">Actual work · expanded</text>
+        </svg>
+        <figcaption class="diagram-caption">Fig. 03 — Illustrative time allocation. <span class="accent">Same total hour. The work-segment expanded into the space the dispatch ritual used to fill.</span></figcaption>
+      </figure>
+
+      <p class="body-text">Tokens collapsed because the AI stopped re-litigating context. When a session opens with a clean audit and a written state, the AI does not have to reconstruct the project from chat history. It does not have to ask me clarifying questions I already answered four times. It moves straight to the next bounded scope of work.</p>
+
+      <p class="body-text">The work that used to take three exploratory sessions to finish a phase now takes one focused session. The tokens that used to be spent re-establishing context get spent on actual output. Both savings are real. Both compound across multiple projects.</p>
+    </section>
+
+    <div class="gold-rule"></div>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         § 04 — SECOND-ORDER: QUALITY
+         ═══════════════════════════════════════════════════════════ -->
+    <section>
+      <p class="section-eyebrow"><span class="num">§ 04</span> Second-Order Consequence</p>
+      <h2 class="section-head">The quality <em>went up</em>.</h2>
+
+      <p class="body-text">The quality improvement surprised me.</p>
+
+      <p class="body-text">When I was the dispatcher, I skipped the audit half the time. I would open a session, glance at the prior output, decide it looked good, and tell the AI to keep building. Sometimes I was right. Sometimes the prior output had a subtle flaw: a broken assumption, a missing field, a verification we forgot to run, a handoff note that contradicted the phase map.</p>
+
+      <!-- @r020:F2 proof: audit-frequency before/after — a stark editorial statistic that visualizes the mechanical floor the loop installs -->
+      <figure class="diagram">
+        <svg viewBox="0 0 560 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Audit frequency before and after. Before: 50% of audits skipped when the human was dispatching. After: 0% skipped — the standing prompt does not get tired.">
+          <!-- big stat: 50% (left) -->
+          <text x="100" y="105" text-anchor="middle" class="svg-num-big" fill="#909090">50%</text>
+          <line x1="40" y1="125" x2="160" y2="125" stroke="#909090" stroke-width="1" opacity="0.4"/>
+          <text x="100" y="148" text-anchor="middle" class="svg-num-sub">Of audits skipped</text>
+          <text x="100" y="162" text-anchor="middle" class="svg-num-sub">when I was the dispatcher</text>
+          <!-- micro-bar -->
+          <rect x="40" y="180" width="120" height="6" fill="#909090" opacity="0.3"/>
+          <rect x="40" y="180" width="60" height="6" fill="#909090"/>
+
+          <!-- arrow -->
+          <line x1="200" y1="80" x2="360" y2="80" class="svg-arrow"/>
+          <path d="M 352 73 L 360 80 L 352 87" class="svg-arrow"/>
+          <text x="280" y="65" text-anchor="middle" fill="#FFD700" font-family="Playfair Display, serif" font-style="italic" font-size="11">the standing prompt</text>
+
+          <!-- big stat: 0% (right) -->
+          <text x="460" y="105" text-anchor="middle" class="svg-num-big">0%</text>
+          <line x1="400" y1="125" x2="520" y2="125" stroke="#FFEB00" stroke-width="1" opacity="0.5"/>
+          <text x="460" y="148" text-anchor="middle" class="svg-num-sub" fill="#FFEB00">When the loop runs the session</text>
+          <text x="460" y="162" text-anchor="middle" class="svg-num-sub">— audit always runs first</text>
+          <!-- micro-bar -->
+          <rect x="400" y="180" width="120" height="6" fill="#FFEB00" opacity="0.15"/>
+          <rect x="400" y="180" width="120" height="6" fill="#FFEB00"/>
+        </svg>
+        <figcaption class="diagram-caption">Fig. 04 — Illustrative audit-frequency shift. <span class="accent">The standing prompt does not get tired. It walks the checklist every single time.</span></figcaption>
+      </figure>
+
+      <p class="body-text">I missed those because I was tired, rushed, or already mentally on to the next thing.</p>
+
+      <p class="body-text">The standing prompt does not skip the audit. It does not get tired. It does not decide the prior phase looks fine because it wants momentum. It walks the checklist every single time and refuses to build the next phase until the audit passes.</p>
+
+      <p class="body-text">That changed the shape of the work. The output became cleaner not because the AI became smarter. Same model. Same collaborator. Same raw capability. The difference was that the process now had a <em>mechanical</em> floor underneath it.</p>
+
+      <p class="body-text">Every phase had to prove it deserved to become the foundation for the next phase. That one constraint caught more issues than my attention could reliably catch by itself.</p>
+
+      <p class="coda">The loop did not just save time. It raised the floor.</p>
+    </section>
+
+    <div class="gold-rule"></div>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         § 05 — THIRD-ORDER: THE ASSET
+         ═══════════════════════════════════════════════════════════ -->
+    <section>
+      <p class="section-eyebrow"><span class="num">§ 05</span> Third-Order Consequence</p>
+      <h2 class="section-head">The standing order becomes the <em>asset</em>.</h2>
+
+      <p class="body-text">The standing prompt is not ephemeral. It is a file, in a repo, versioned, with a clear history of edits. Which means it is, suddenly, an asset of the business.</p>
+
+      <!-- @r020:F4 curiosity: standing-order-branching diagram visualizes the three compounding properties — improved, audited, transferred — that turn the prompt into a business asset -->
+      <figure class="diagram">
+        <svg viewBox="0 0 560 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Standing-order asset diagram: the standing prompt at center branches into three compounding properties — Improved, Audited, Transferred — each with a brief outcome.">
+          <!-- center: standing order -->
+          <rect x="200" y="115" width="160" height="50" rx="4" stroke="#FFEB00" stroke-width="1.25" fill="none"/>
+          <text x="280" y="138" text-anchor="middle" fill="#FFD700" font-family="Playfair Display, serif" font-style="italic" font-size="13">Standing order</text>
+          <text x="280" y="155" text-anchor="middle" fill="#909090" font-family="DM Sans, sans-serif" font-size="9" letter-spacing="0.12em">VERSIONED FILE · CLEAR HISTORY</text>
+
+          <!-- branches -->
+          <!-- TOP: improved -->
+          <line x1="280" y1="115" x2="280" y2="60" stroke="#FFEB00" stroke-width="1" stroke-linecap="round"/>
+          <circle cx="280" cy="60" r="4" fill="#FFEB00"/>
+          <text x="280" y="42" text-anchor="middle" fill="#FAFAFA" font-family="DM Sans, sans-serif" font-size="11" font-weight="700" letter-spacing="0.18em">IMPROVED</text>
+          <text x="280" y="22" text-anchor="middle" fill="#909090" font-family="Playfair Display, serif" font-style="italic" font-size="10">Edit the rule once · future runs inherit</text>
+
+          <!-- BOTTOM-LEFT: audited -->
+          <line x1="240" y1="165" x2="130" y2="230" stroke="#FFEB00" stroke-width="1" stroke-linecap="round"/>
+          <circle cx="130" cy="230" r="4" fill="#FFEB00"/>
+          <text x="130" y="250" text-anchor="middle" fill="#FAFAFA" font-family="DM Sans, sans-serif" font-size="11" font-weight="700" letter-spacing="0.18em">AUDITED</text>
+          <text x="130" y="266" text-anchor="middle" fill="#909090" font-family="Playfair Display, serif" font-style="italic" font-size="10">Anyone can read</text>
+          <text x="130" y="278" text-anchor="middle" fill="#909090" font-family="Playfair Display, serif" font-style="italic" font-size="10">why each step exists</text>
+
+          <!-- BOTTOM-RIGHT: transferred -->
+          <line x1="320" y1="165" x2="430" y2="230" stroke="#FFEB00" stroke-width="1" stroke-linecap="round"/>
+          <circle cx="430" cy="230" r="4" fill="#FFEB00"/>
+          <text x="430" y="250" text-anchor="middle" fill="#FAFAFA" font-family="DM Sans, sans-serif" font-size="11" font-weight="700" letter-spacing="0.18em">TRANSFERRED</text>
+          <text x="430" y="266" text-anchor="middle" fill="#909090" font-family="Playfair Display, serif" font-style="italic" font-size="10">One order runs five</text>
+          <text x="430" y="278" text-anchor="middle" fill="#909090" font-family="Playfair Display, serif" font-style="italic" font-size="10">projects in parallel</text>
+        </svg>
+        <figcaption class="diagram-caption">Fig. 05 — Three compounding properties. <span class="accent">The first-order win is motion. The third-order win is sovereignty.</span></figcaption>
+      </figure>
+
+      <p class="body-text">It can be <em>improved</em>. When we find a failure mode, such as an edge case the prompt did not account for, we do not fix the symptom in one session. We update the standing order, and every future execution inherits the fix. The system learns by editing the rule, not by repeating the lesson.</p>
+
+      <p class="body-text">It can be <em>audited</em>. Someone new can read it and understand exactly how the work is run. Future me can see why a handoff requires a screenshot, why QA must include a failed-state check, why a phase cannot close without a log entry. The intelligence stops being trapped in my head.</p>
+
+      <p class="body-text">It can be <em>transferred</em>. The same standing order can run on five projects in parallel. It can be cloned and adapted for a new domain. When the day comes that the business runs without me in the room, the standing orders are what make that possible. The business becomes legible to itself.</p>
+
+      <p class="coda">The first-order consequence is motion. The third-order consequence is <em>sovereignty</em>.</p>
+    </section>
+
+    <div class="gold-rule"></div>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         § 06 — TRANSLATION
+         ═══════════════════════════════════════════════════════════ -->
+    <section>
+      <p class="section-eyebrow"><span class="num">§ 06</span> Translation</p>
+      <h2 class="section-head">What this means if you run a <em>service</em> business.</h2>
+
+      <p class="body-text">I am writing this for the operator who already knows AI matters and is still trying to figure out where to apply attention.</p>
+
+      <p class="body-text">Every service business runs on recurring classes of work: onboarding a new customer, quoting a job, following up after an estimate, replying to a review, sending the post-service survey, closing the loop after the work is done. Each one has a standard. That standard usually lives inside the owner.</p>
+
+      <p class="body-text">The leverage move is not faster emails or a smarter chatbot. It is writing the standing instruction once, using the audit-then-build-then-loop pattern, and letting the system carry the standard at 7am, at 11pm, on Christmas Eve.</p>
+
+      <p class="body-text">You stop being the explainer-of-record. You become the <em>editor</em> of the standing order.</p>
+
+      <p class="body-text">This is what separates automation from an operating system. Automation handles a task. A standing order carries the judgment around the task: what good looks like, what evidence matters, where the handoff goes, when to escalate, when to stop, and when to refuse to proceed.</p>
+
+      <p class="body-text">Most owners are still using AI to do their work faster. The owners pulling ahead are using it to <em>carry</em> their work.</p>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         § 07 — CTA
+         ═══════════════════════════════════════════════════════════ -->
+    <section class="cta-section">
+      <p class="section-eyebrow"><span class="num">§ 07</span> If You Are the Bottleneck</p>
+      <h2 class="section-head">The fix is a pattern you can <em>own</em>.</h2>
+
+      <p class="body-text">If you run an owner-led service business doing $3M to $15M in annual revenue, and you are sick of being the connective tissue between fragmented tools and fragmented advice, that bottleneck is the bridge.</p>
+
+      <p class="body-text"><a href="https://buildwisemedia.com">Buildwise Media</a> installs the operating system that runs the business outside the owner's head, on the owner's domain, with the owner keeping the asset.</p>
+
+      <p class="body-text">The work is not handing you more software to manage. The work is extracting the standards already inside the business, turning them into standing orders, and making the operation legible enough to run without constant owner translation.</p>
+    </section>
+
+    <!-- ═══ CLOSING PULL QUOTE ═══ -->
+    <div class="pull-quote">
+      <div class="pull-quote-inner">
+        <p class="pull-quote-text">The bottleneck wasn't the model. It was me. The fix was a pattern we built together.</p>
+      </div>
+    </div>
+
+    <!-- ═══ SIGN-OFF ═══ -->
+    <p class="sign-off" style="margin-top:2rem;">— Robert Echevarria</p>
+
+    <div class="gold-rule" style="margin-top:2.5rem;"></div>
+
+    <!-- ═══ NEWSLETTER DESCRIPTION ═══ -->
+    <p class="newsletter-desc">The Dark Factory is a weekly newsletter about building with AI at the business level. Not theory. Not hype. What's actually working, what's actually changing, and what to do about it.</p>
+
+    <!-- ═══ CONNECT ═══ -->
+    <div style="margin-top:1.6rem;">
+      <p class="section-label">Connect</p>
+      <div class="social-links">
+        <a href="https://www.linkedin.com/in/robertechevarria/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://x.com/heyroberte" target="_blank" rel="noopener">X</a>
+        <a href="https://www.instagram.com/heyroberte/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.youtube.com/@heyroberte" target="_blank" rel="noopener">YouTube</a>
+      </div>
+    </div>
+
+    <!-- ═══ FOOTER ═══ -->
+    <footer style="margin-top:2rem;">
+      <div class="full-rule"></div>
+      <p class="footer-text" style="margin-top:1.2rem;">Atlanta, GA</p>
+      <p class="footer-text" style="margin-top:0.4rem;">You're receiving this because you signed up at robertechevarria.com or connected with me directly.</p>
+      <p class="footer-text" style="margin-top:0.8rem;">
+        <a href="#unsubscribe">Unsubscribe</a> &nbsp;&middot;&nbsp; <a href="#preferences">Manage preferences</a>
+      </p>
+    </footer>
+
+  </main>
+
+  <script>
+    /* ── Social Link Click Tracking ── */
+    document.querySelectorAll('.social-links a').forEach(function(link) {
+      link.addEventListener('click', function() {
+        var platform = this.textContent.trim().toLowerCase();
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+          event: 'social_click',
+          social_platform: platform,
+          page_type: 'newsletter'
+        });
+      });
+    });
+
+    /* ── Scroll Depth Tracking ── */
+    (function() {
+      var milestones = [25, 50, 75, 100];
+      var fired = {};
+      function getScrollPercent() {
+        var h = document.documentElement;
+        var b = document.body;
+        var st = h.scrollTop || b.scrollTop;
+        var sh = (h.scrollHeight || b.scrollHeight) - h.clientHeight;
+        return sh > 0 ? Math.round((st / sh) * 100) : 0;
+      }
+      var ticking = false;
+      window.addEventListener('scroll', function() {
+        if (!ticking) {
+          window.requestAnimationFrame(function() {
+            var pct = getScrollPercent();
+            milestones.forEach(function(m) {
+              if (pct >= m && !fired[m]) {
+                fired[m] = true;
+                window.dataLayer = window.dataLayer || [];
+                window.dataLayer.push({
+                  event: 'scroll_depth',
+                  scroll_milestone: m,
+                  page_type: 'newsletter',
+                  article_title: 'We Were the Bottleneck of Our Own AI'
+                });
+              }
+            });
+            ticking = false;
+          });
+          ticking = true;
+        }
+      }, { passive: true });
+    })();
+  </script>
+</body>
+</html>
