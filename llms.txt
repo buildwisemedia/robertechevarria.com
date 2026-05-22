@@ -15,6 +15,7 @@ Robert Echevarria runs AI in a real business every day. He founded an AI-native 
 ## Pages
 
 - [Homepage](https://robertechevarria.com/): Bio, positioning, social links, newsletter signup
+- [The Standing Order](https://robertechevarria.com/newsletter/the-standing-order): Newsletter issue on the standing prompt pattern Robert uses to keep AI-assisted projects audited, bounded, and shippable across sessions
 - [The Harder You Work](https://robertechevarria.com/newsletter/the-harder-you-work): Newsletter issue on why AI makes high performers work more, not less
 
 ## Connect

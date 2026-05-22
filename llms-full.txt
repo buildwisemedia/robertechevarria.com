@@ -26,6 +26,14 @@ Website: https://buildwisemedia.com
 
 Writing about building with AI at the business level. Not theory. Not hype. What's actually working, what's actually changing, and what to do about it.
 
+### Issue: The Standing Order (May 21, 2026)
+
+URL: https://robertechevarria.com/newsletter/the-standing-order
+
+The bottleneck was not the model. It was the project state. Robert was building complex projects with an AI co-builder, going down rabbit holes, losing track of what was done, and watching the AI lose track too. The fix was a standing prompt that opens each session by auditing the previous phase, confirming the current state, building only the next bounded phase, and leaving a receipt before the pointer advances.
+
+The pattern turns fragile memory into operating infrastructure. It reduces dispatch time, cuts repeated context reconstruction, lowers drift, and raises the quality floor because the audit runs even when the human is tired. The standing order becomes an asset: a versioned file that can be improved, audited, and transferred instead of a private ritual trapped in the owner's head.
+
 ### Issue: The Harder You Work (April 11, 2026)
 
 URL: https://robertechevarria.com/newsletter/the-harder-you-work

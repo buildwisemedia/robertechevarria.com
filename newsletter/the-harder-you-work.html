@@ -100,7 +100,7 @@
     body {
       background: var(--bg-page);
       color: var(--text-body);
-      font-family: 'DM Sans', 'Helvetica Neue', Arial, sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-weight: 300;
       line-height: 1.78;
       min-height: 100vh;
@@ -112,6 +112,7 @@
       content: '';
       position: fixed;
       inset: 0;
+      /* @r020:F1 emotion: restrained film grain creates the Dark Factory editorial texture without adding a decorative hero image */
       background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
       pointer-events: none;
       z-index: 9999;
@@ -120,22 +121,22 @@
     /* ── Ambient glow — Yellow Alert: accent on top, gold-em on bottom ── */
     .glow {
       position: fixed;
-      top: -20vh;
-      left: -10vw;
+      top: 0;
+      left: 0;
       width: 70vw;
-      height: 70vh;
-      background: radial-gradient(ellipse at center, rgba(255,235,0,0.04) 0%, transparent 70%);
+      height: 55vh;
+      background: radial-gradient(ellipse at top left, rgba(255,235,0,0.04) 0%, transparent 70%);
       pointer-events: none;
       z-index: 0;
     }
 
     .glow-bottom {
       position: fixed;
-      bottom: -30vh;
-      right: -15vw;
+      bottom: 0;
+      right: 0;
       width: 60vw;
-      height: 60vh;
-      background: radial-gradient(ellipse at center, rgba(255,215,0,0.03) 0%, transparent 70%);
+      height: 50vh;
+      background: radial-gradient(ellipse at bottom right, rgba(255,215,0,0.03) 0%, transparent 70%);
       pointer-events: none;
       z-index: 0;
     }

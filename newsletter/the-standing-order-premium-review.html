@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+<!-- @r020-exempt: noindex dev review artifact retained only for comparison against the canonical article route -->
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,24 +13,23 @@
   <style>
     :root {
       --page: #050505;
-      --ink: #fbf7ec;
-      --body: rgba(251, 247, 236, 0.78);
-      --muted: rgba(251, 247, 236, 0.48);
-      --dim: rgba(251, 247, 236, 0.24);
+      --ink: #FAFAFA;
+      --body: rgba(250, 250, 250, 0.78);
+      --muted: rgba(250, 250, 250, 0.48);
+      --dim: rgba(250, 250, 250, 0.24);
       --yellow: #ffeb00;
-      --gold: #d9ad38;
-      --cyan: #63d8cb;
-      --coral: #ff7f66;
-      --violet: #a7a0ff;
+      --gold: #FFD700;
+      --signal: #FFEB00;
+      --warm-signal: #FFD700;
       --surface: #0b0b0a;
       --surface-2: #12110e;
       --line: rgba(255, 235, 0, 0.18);
-      --line-soft: rgba(251, 247, 236, 0.12);
+      --line-soft: rgba(250, 250, 250, 0.12);
       --shadow: rgba(0, 0, 0, 0.45);
       --spot-x: 68%;
       --spot-y: 22%;
       --serif: "Playfair Display", Georgia, serif;
-      --sans: "DM Sans", Arial, sans-serif;
+      --sans: "DM Sans", sans-serif;
     }
 
     * {
@@ -527,20 +527,21 @@
       place-items: center;
       min-width: 0;
       color: #050505;
-      font-size: 0.7rem;
+      font-size: 0.52rem;
       font-weight: 700;
       line-height: 1.1;
+      overflow: hidden;
       text-align: center;
-      padding: 0 6px;
+      padding: 0 2px;
     }
 
     .bar .dispatch {
-      background: rgba(251, 247, 236, 0.38);
+      background: rgba(250, 250, 250, 0.38);
       color: var(--ink);
     }
 
     .bar .clarify {
-      background: rgba(255, 127, 102, 0.72);
+      background: rgba(255, 215, 0, 0.72);
       color: #160806;
     }
 
@@ -549,7 +550,7 @@
     }
 
     .bar .receipt {
-      background: rgba(99, 216, 203, 0.72);
+      background: rgba(255, 235, 0, 0.72);
       color: #041412;
     }
 
@@ -578,15 +579,15 @@
     }
 
     .swatch.muted {
-      background: rgba(251, 247, 236, 0.38);
+      background: rgba(250, 250, 250, 0.38);
     }
 
     .swatch.coral {
-      background: rgba(255, 127, 102, 0.72);
+      background: rgba(255, 215, 0, 0.72);
     }
 
     .swatch.cyan {
-      background: rgba(99, 216, 203, 0.72);
+      background: rgba(255, 235, 0, 0.72);
     }
 
     .quality-grid {
@@ -695,7 +696,7 @@
       pointer-events: none;
       background:
         radial-gradient(circle at var(--spot-x) var(--spot-y), rgba(255, 235, 0, 0.16), transparent 22%),
-        radial-gradient(circle at 82% 58%, rgba(99, 216, 203, 0.08), transparent 20%),
+        radial-gradient(circle at 82% 58%, rgba(255, 235, 0, 0.08), transparent 20%),
         linear-gradient(115deg, transparent 0 42%, rgba(255, 235, 0, 0.045) 44%, transparent 58%);
       opacity: 0.88;
       transition: background 180ms ease-out;
@@ -708,7 +709,7 @@
       z-index: -1;
       pointer-events: none;
       background: linear-gradient(180deg, transparent, rgba(255, 235, 0, 0.035) 42%, transparent 76%);
-      mask-image: repeating-linear-gradient(180deg, #000 0 1px, transparent 1px 9px);
+      mask-image: repeating-linear-gradient(180deg, rgba(5, 5, 5, 1) 0 1px, transparent 1px 9px);
     }
 
     .system-panel {
@@ -1184,15 +1185,16 @@
       }
 
       .rail-links {
-        display: flex;
-        overflow-x: auto;
-        gap: 22px;
-        padding-bottom: 6px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        overflow-x: visible;
+        gap: 8px 14px;
+        padding-bottom: 0;
       }
 
       .rail-links a {
-        grid-template-columns: 1fr;
-        min-width: 140px;
+        grid-template-columns: 32px 1fr;
+        min-width: 0;
       }
 
       .guide-grid {
@@ -1336,27 +1338,27 @@
               <path class="orbit-path" d="M210 76 C288 76 340 126 340 178 C340 230 288 280 210 280 C132 280 80 230 80 178 C80 126 132 76 210 76" fill="none" stroke="#ffeb00" stroke-width="2.2" marker-end="url(#arrow-yellow)"></path>
               <g class="console-node node-1">
                 <circle cx="210" cy="76" r="42" fill="#12110e" stroke="#ffeb00"></circle>
-                <text x="210" y="72" text-anchor="middle" fill="#fbf7ec" font-family="DM Sans, Arial" font-size="13" font-weight="700">AUDIT</text>
-                <text x="210" y="91" text-anchor="middle" fill="rgba(251,247,236,0.52)" font-family="Playfair Display, Georgia" font-size="12" font-style="italic">what is true?</text>
+                <text x="210" y="72" text-anchor="middle" fill="#FAFAFA" font-family="DM Sans" font-size="13" font-weight="700">AUDIT</text>
+                <text x="210" y="91" text-anchor="middle" fill="rgba(250, 250, 250,0.52)" font-family="Playfair Display, Georgia" font-size="12" font-style="italic">what is true?</text>
               </g>
               <g class="console-node node-2">
-                <circle cx="340" cy="178" r="42" fill="#12110e" stroke="#63d8cb"></circle>
-                <text x="340" y="174" text-anchor="middle" fill="#fbf7ec" font-family="DM Sans, Arial" font-size="13" font-weight="700">STATE</text>
-                <text x="340" y="193" text-anchor="middle" fill="rgba(251,247,236,0.52)" font-family="Playfair Display, Georgia" font-size="12" font-style="italic">where are we?</text>
+                <circle cx="340" cy="178" r="42" fill="#12110e" stroke="#FFEB00"></circle>
+                <text x="340" y="174" text-anchor="middle" fill="#FAFAFA" font-family="DM Sans" font-size="13" font-weight="700">STATE</text>
+                <text x="340" y="193" text-anchor="middle" fill="rgba(250, 250, 250,0.52)" font-family="Playfair Display, Georgia" font-size="12" font-style="italic">where are we?</text>
               </g>
               <g class="console-node node-3">
                 <circle cx="210" cy="280" r="42" fill="#12110e" stroke="#ffeb00"></circle>
-                <text x="210" y="276" text-anchor="middle" fill="#fbf7ec" font-family="DM Sans, Arial" font-size="13" font-weight="700">BUILD</text>
-                <text x="210" y="295" text-anchor="middle" fill="rgba(251,247,236,0.52)" font-family="Playfair Display, Georgia" font-size="12" font-style="italic">next phase</text>
+                <text x="210" y="276" text-anchor="middle" fill="#FAFAFA" font-family="DM Sans" font-size="13" font-weight="700">BUILD</text>
+                <text x="210" y="295" text-anchor="middle" fill="rgba(250, 250, 250,0.52)" font-family="Playfair Display, Georgia" font-size="12" font-style="italic">next phase</text>
               </g>
               <g class="console-node node-4">
-                <circle cx="80" cy="178" r="42" fill="#12110e" stroke="#d9ad38"></circle>
-                <text x="80" y="174" text-anchor="middle" fill="#fbf7ec" font-family="DM Sans, Arial" font-size="13" font-weight="700">RECEIPT</text>
-                <text x="80" y="193" text-anchor="middle" fill="rgba(251,247,236,0.52)" font-family="Playfair Display, Georgia" font-size="12" font-style="italic">leave evidence</text>
+                <circle cx="80" cy="178" r="42" fill="#12110e" stroke="#FFD700"></circle>
+                <text x="80" y="174" text-anchor="middle" fill="#FAFAFA" font-family="DM Sans" font-size="13" font-weight="700">RECEIPT</text>
+                <text x="80" y="193" text-anchor="middle" fill="rgba(250, 250, 250,0.52)" font-family="Playfair Display, Georgia" font-size="12" font-style="italic">leave evidence</text>
               </g>
-              <line x1="80" y1="124" x2="80" y2="82" stroke="rgba(255,127,102,0.8)" stroke-width="1.4" stroke-dasharray="4 5"></line>
-              <text x="80" y="60" text-anchor="middle" fill="#ff7f66" font-family="DM Sans, Arial" font-size="12" font-weight="700">YOU</text>
-              <text x="80" y="342" fill="rgba(251,247,236,0.48)" font-family="Playfair Display, Georgia" font-size="13" font-style="italic">The human edits the rule. The rule carries the workflow.</text>
+              <line x1="80" y1="124" x2="80" y2="82" stroke="rgba(255, 215, 0,0.8)" stroke-width="1.4" stroke-dasharray="4 5"></line>
+              <text x="80" y="60" text-anchor="middle" fill="#FFD700" font-family="DM Sans" font-size="12" font-weight="700">YOU</text>
+              <text x="80" y="342" fill="rgba(250, 250, 250,0.48)" font-family="Playfair Display, Georgia" font-size="13" font-style="italic">The human edits the rule. The rule carries the workflow.</text>
             </svg>
           </div>
           <div class="evidence-ticker" aria-label="System evidence ticker">
@@ -1440,25 +1442,25 @@
               <div class="figure-inner">
                 <div class="figure-label"><b>Fig. 01 - Session state split</b><span>Make divergence the first proof</span></div>
                 <svg class="chart-svg" viewBox="0 0 660 320" role="img" aria-label="Line chart showing reality, human estimate, and AI estimate diverging until the audit is installed.">
-                  <line x1="48" y1="48" x2="48" y2="236" stroke="rgba(251,247,236,0.22)"></line>
-                  <line x1="48" y1="236" x2="612" y2="236" stroke="rgba(251,247,236,0.22)"></line>
+                  <line x1="48" y1="48" x2="48" y2="236" stroke="rgba(250, 250, 250,0.22)"></line>
+                  <line x1="48" y1="236" x2="612" y2="236" stroke="rgba(250, 250, 250,0.22)"></line>
                   <line x1="48" y1="80" x2="612" y2="80" stroke="rgba(255,235,0,0.1)"></line>
                   <line x1="48" y1="132" x2="612" y2="132" stroke="rgba(255,235,0,0.1)"></line>
                   <line x1="48" y1="184" x2="612" y2="184" stroke="rgba(255,235,0,0.1)"></line>
                   <path class="chart-glow" d="M48 225 L126 188 L204 148 L282 104 L360 70 L414 60 L414 196 L360 208 L282 218 L204 226 L126 230 L48 225 Z" fill="#ffeb00" opacity="0.08"></path>
                   <line class="draw-line dashed" x1="414" y1="48" x2="414" y2="236" stroke="#ffeb00" stroke-dasharray="4 5"></line>
-                  <text x="426" y="58" fill="#ffeb00" font-family="DM Sans, Arial" font-size="12" font-weight="700">AUDIT INSTALLED</text>
+                  <text x="426" y="58" fill="#ffeb00" font-family="DM Sans" font-size="12" font-weight="700">AUDIT INSTALLED</text>
                   <path class="draw-line" d="M48 226 L126 205 L204 184 L282 162 L360 136 L414 120 L504 92 L612 68" fill="none" stroke="#ffeb00" stroke-width="3"></path>
-                  <path class="draw-line dashed" d="M48 224 L126 182 L204 138 L282 98 L360 64 L414 60 L504 84 L612 68" fill="none" stroke="rgba(251,247,236,0.56)" stroke-width="2" stroke-dasharray="6 6"></path>
-                  <path class="draw-line dashed" d="M48 232 L126 228 L204 225 L282 222 L360 212 L414 196 L504 92 L612 68" fill="none" stroke="#ff7f66" stroke-width="2" stroke-dasharray="6 6"></path>
+                  <path class="draw-line dashed" d="M48 224 L126 182 L204 138 L282 98 L360 64 L414 60 L504 84 L612 68" fill="none" stroke="rgba(250, 250, 250,0.56)" stroke-width="2" stroke-dasharray="6 6"></path>
+                  <path class="draw-line dashed" d="M48 232 L126 228 L204 225 L282 222 L360 212 L414 196 L504 92 L612 68" fill="none" stroke="#FFD700" stroke-width="2" stroke-dasharray="6 6"></path>
                   <circle cx="612" cy="68" r="5" fill="#ffeb00"></circle>
-                  <g font-family="DM Sans, Arial" font-size="12" font-weight="700">
+                  <g font-family="DM Sans" font-size="12" font-weight="700">
                     <rect x="48" y="270" width="12" height="12" fill="#ffeb00"></rect>
-                    <text x="68" y="281" fill="#fbf7ec">Reality</text>
-                    <rect x="176" y="270" width="12" height="12" fill="rgba(251,247,236,0.56)"></rect>
-                    <text x="196" y="281" fill="#fbf7ec">What I thought</text>
-                    <rect x="358" y="270" width="12" height="12" fill="#ff7f66"></rect>
-                    <text x="378" y="281" fill="#fbf7ec">What AI thought</text>
+                    <text x="68" y="281" fill="#FAFAFA">Reality</text>
+                    <rect x="176" y="270" width="12" height="12" fill="rgba(250, 250, 250,0.56)"></rect>
+                    <text x="196" y="281" fill="#FAFAFA">What I thought</text>
+                    <rect x="358" y="270" width="12" height="12" fill="#FFD700"></rect>
+                    <text x="378" y="281" fill="#FAFAFA">What AI thought</text>
                   </g>
                 </svg>
                 <p class="figure-caption"><strong>Design note:</strong> Keep the legend below the plot and let the chart own the full width. This makes the core pain legible before the reader reaches the explanation.</p>
@@ -1484,23 +1486,23 @@
                     </marker>
                   </defs>
                   <path class="draw-line" d="M330 54 C450 54 552 122 552 188 C552 254 450 302 330 302 C210 302 108 254 108 188 C108 122 210 54 330 54" fill="none" stroke="#ffeb00" stroke-width="2.4" marker-end="url(#arrow-loop)"></path>
-                  <g font-family="DM Sans, Arial" font-size="14" font-weight="700" text-anchor="middle">
+                  <g font-family="DM Sans" font-size="14" font-weight="700" text-anchor="middle">
                     <circle cx="330" cy="54" r="42" fill="#12110e" stroke="#ffeb00"></circle>
-                    <text x="330" y="51" fill="#fbf7ec">STANDING</text>
-                    <text x="330" y="70" fill="#fbf7ec">PROMPT</text>
-                    <circle cx="552" cy="188" r="42" fill="#12110e" stroke="#63d8cb"></circle>
-                    <text x="552" y="184" fill="#fbf7ec">AUDIT</text>
-                    <text x="552" y="203" fill="rgba(251,247,236,0.52)" font-family="Playfair Display, Georgia" font-size="12" font-style="italic" font-weight="400">prove state</text>
+                    <text x="330" y="51" fill="#FAFAFA">STANDING</text>
+                    <text x="330" y="70" fill="#FAFAFA">PROMPT</text>
+                    <circle cx="552" cy="188" r="42" fill="#12110e" stroke="#FFEB00"></circle>
+                    <text x="552" y="184" fill="#FAFAFA">AUDIT</text>
+                    <text x="552" y="203" fill="rgba(250, 250, 250,0.52)" font-family="Playfair Display, Georgia" font-size="12" font-style="italic" font-weight="400">prove state</text>
                     <circle cx="330" cy="302" r="42" fill="#12110e" stroke="#ffeb00"></circle>
-                    <text x="330" y="298" fill="#fbf7ec">BUILD</text>
-                    <text x="330" y="317" fill="rgba(251,247,236,0.52)" font-family="Playfair Display, Georgia" font-size="12" font-style="italic" font-weight="400">bounded scope</text>
-                    <circle cx="108" cy="188" r="42" fill="#12110e" stroke="#d9ad38"></circle>
-                    <text x="108" y="184" fill="#fbf7ec">RECEIPT</text>
-                    <text x="108" y="203" fill="rgba(251,247,236,0.52)" font-family="Playfair Display, Georgia" font-size="12" font-style="italic" font-weight="400">leave trace</text>
+                    <text x="330" y="298" fill="#FAFAFA">BUILD</text>
+                    <text x="330" y="317" fill="rgba(250, 250, 250,0.52)" font-family="Playfair Display, Georgia" font-size="12" font-style="italic" font-weight="400">bounded scope</text>
+                    <circle cx="108" cy="188" r="42" fill="#12110e" stroke="#FFD700"></circle>
+                    <text x="108" y="184" fill="#FAFAFA">RECEIPT</text>
+                    <text x="108" y="203" fill="rgba(250, 250, 250,0.52)" font-family="Playfair Display, Georgia" font-size="12" font-style="italic" font-weight="400">leave trace</text>
                   </g>
-                  <line x1="330" y1="108" x2="330" y2="158" stroke="rgba(255,127,102,0.9)" stroke-dasharray="4 6"></line>
-                  <text x="330" y="178" fill="#ff7f66" font-family="DM Sans, Arial" font-size="12" font-weight="700" text-anchor="middle">YOU EDIT THE RULE</text>
-                  <text x="330" y="207" fill="rgba(251,247,236,0.58)" font-family="Playfair Display, Georgia" font-size="16" font-style="italic" text-anchor="middle">The rule carries the next session.</text>
+                  <line x1="330" y1="108" x2="330" y2="158" stroke="rgba(255, 215, 0,0.9)" stroke-dasharray="4 6"></line>
+                  <text x="330" y="178" fill="#FFD700" font-family="DM Sans" font-size="12" font-weight="700" text-anchor="middle">YOU EDIT THE RULE</text>
+                  <text x="330" y="207" fill="rgba(250, 250, 250,0.58)" font-family="Playfair Display, Georgia" font-size="16" font-style="italic" text-anchor="middle">The rule carries the next session.</text>
                 </svg>
                 <p class="figure-caption"><strong>Design note:</strong> Put sub-labels outside the operational labels. The reader should never have to decode the diagram before decoding the argument.</p>
               </div>
@@ -1587,19 +1589,19 @@
                   <line class="branch-line" x1="330" y1="108" x2="330" y2="206" stroke="#ffeb00" stroke-width="2"></line>
                   <line class="branch-line" x1="500" y1="108" x2="500" y2="206" stroke="#ffeb00" stroke-width="2"></line>
                   <rect class="branch-node" x="224" y="16" width="212" height="50" fill="#12110e" stroke="#ffeb00"></rect>
-                  <text class="branch-node" x="330" y="47" fill="#fbf7ec" font-family="DM Sans, Arial" font-size="14" font-weight="700" text-anchor="middle">STANDING ORDER</text>
-                  <g font-family="DM Sans, Arial" text-anchor="middle">
-                    <rect class="branch-node" x="82" y="206" width="156" height="74" fill="#12110e" stroke="#63d8cb"></rect>
-                    <text class="branch-node" x="160" y="236" fill="#fbf7ec" font-size="14" font-weight="700">IMPROVE</text>
-                    <text class="branch-node" x="160" y="260" fill="rgba(251,247,236,0.52)" font-family="Playfair Display, Georgia" font-size="13" font-style="italic">fix once, inherit often</text>
-                    <rect class="branch-node" x="252" y="206" width="156" height="74" fill="#12110e" stroke="#d9ad38"></rect>
-                    <text class="branch-node" x="330" y="236" fill="#fbf7ec" font-size="14" font-weight="700">AUDIT</text>
-                    <text class="branch-node" x="330" y="260" fill="rgba(251,247,236,0.52)" font-family="Playfair Display, Georgia" font-size="13" font-style="italic">make judgment visible</text>
-                    <rect class="branch-node" x="422" y="206" width="156" height="74" fill="#12110e" stroke="#ff7f66"></rect>
-                    <text class="branch-node" x="500" y="236" fill="#fbf7ec" font-size="14" font-weight="700">TRANSFER</text>
-                    <text class="branch-node" x="500" y="260" fill="rgba(251,247,236,0.52)" font-family="Playfair Display, Georgia" font-size="13" font-style="italic">run without you</text>
+                  <text class="branch-node" x="330" y="47" fill="#FAFAFA" font-family="DM Sans" font-size="14" font-weight="700" text-anchor="middle">STANDING ORDER</text>
+                  <g font-family="DM Sans" text-anchor="middle">
+                    <rect class="branch-node" x="82" y="206" width="156" height="74" fill="#12110e" stroke="#FFEB00"></rect>
+                    <text class="branch-node" x="160" y="236" fill="#FAFAFA" font-size="14" font-weight="700">IMPROVE</text>
+                    <text class="branch-node" x="160" y="260" fill="rgba(250, 250, 250,0.52)" font-family="Playfair Display, Georgia" font-size="13" font-style="italic">fix once, inherit often</text>
+                    <rect class="branch-node" x="252" y="206" width="156" height="74" fill="#12110e" stroke="#FFD700"></rect>
+                    <text class="branch-node" x="330" y="236" fill="#FAFAFA" font-size="14" font-weight="700">AUDIT</text>
+                    <text class="branch-node" x="330" y="260" fill="rgba(250, 250, 250,0.52)" font-family="Playfair Display, Georgia" font-size="13" font-style="italic">make judgment visible</text>
+                    <rect class="branch-node" x="422" y="206" width="156" height="74" fill="#12110e" stroke="#FFD700"></rect>
+                    <text class="branch-node" x="500" y="236" fill="#FAFAFA" font-size="14" font-weight="700">TRANSFER</text>
+                    <text class="branch-node" x="500" y="260" fill="rgba(250, 250, 250,0.52)" font-family="Playfair Display, Georgia" font-size="13" font-style="italic">run without you</text>
                   </g>
-                  <text x="330" y="306" fill="#d9ad38" font-family="Playfair Display, Georgia" font-size="15" font-style="italic" text-anchor="middle">All three compound when the standard lives outside the owner.</text>
+                  <text x="330" y="306" fill="#FFD700" font-family="Playfair Display, Georgia" font-size="15" font-style="italic" text-anchor="middle">All three compound when the standard lives outside the owner.</text>
                 </svg>
                 <p class="figure-caption"><strong>Design note:</strong> The closing diagram should lift the reader from "this saved time" to "this becomes infrastructure."</p>
               </div>
