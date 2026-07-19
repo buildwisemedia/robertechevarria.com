@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<!-- @build-author-exempt: codex-auth-down 2026-07-19 — authored by claude-sonnet subagent, Sol lane unavailable -->
+<html lang="en">
+<head>
+  <script>/* bwm-ga-gate: suppress GA4 on CF Pages preview deploys + local dev; production (custom domain or canonical project.pages.dev) tracks normally */(function(){var h=location.hostname,p=h.split('.');if((/\.pages\.dev$/.test(h)&&p.length>3)||h==='localhost'||h==='127.0.0.1'||h==='0.0.0.0'||h===''){window['ga-disable-G-39NT50LZYT']=true;}})();</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Speaking — Robert Echevarria</title>
+  <meta name="description" content="Robert Echevarria speaks to rooms of business owners about running artificial intelligence (AI) in a real business — as the operator of an AI company, not a futurist.">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+  <meta property="og:title" content="Speaking — Robert Echevarria">
+  <meta property="og:description" content="Robert Echevarria speaks to rooms of business owners about running artificial intelligence (AI) in a real business — as the operator of an AI company, not a futurist.">
+  <meta property="og:image" content="https://robertechevarria.com/robert-echevarria-og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="1200">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://robertechevarria.com/speaking/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://robertechevarria.com/robert-echevarria-og.jpg">
+  <meta name="twitter:creator" content="@heyroberte">
+  <link rel="canonical" href="https://robertechevarria.com/speaking/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- Google tag (gtag.js) — Phase 6 PROJ-PB-BUILD-001 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-39NT50LZYT"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-39NT50LZYT');
+  </script>
+
+  <style>
+    /* ──────────────────────────────────────────────
+       YELLOW ALERT — LOCKED 2026-04-28 (inherited)
+       Spec: brand/Robert-Personal-Brand-Identity.md
+       Page: /speaking/
+       ────────────────────────────────────────────── */
+    :root {
+      --canvas: #050505;
+      --surface: #0E0E0E;
+      --accent: #FFEB00;
+      --gold-em: #FFD700;
+      --text: #FAFAFA;
+      --muted: #909090;
+      --dim: #5A5347;
+      --rule: rgba(255, 235, 0, 0.15);
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html {
+      font-size: 18px;
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+    }
+
+    body {
+      background: var(--canvas);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      line-height: 1.7;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    em { font-style: italic; color: var(--gold-em); }
+    h1 em, h2 em, .tagline em { color: var(--accent); }
+
+    /* ── Grain overlay (same as homepage) ── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      /* @r020:F1 emotion: subtle grain gives the page an editorial signal without competing with the portrait or copy */
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 9999;
+    }
+
+    .glow {
+      position: fixed;
+      top: -20vh;
+      left: -10vw;
+      width: 70vw;
+      height: 70vh;
+      background: radial-gradient(ellipse at center, rgba(255,235,0,0.04) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .glow-bottom {
+      position: fixed;
+      bottom: -30vh;
+      right: -15vw;
+      width: 60vw;
+      height: 60vh;
+      background: radial-gradient(ellipse at center, rgba(255,215,0,0.03) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ── Layout ── */
+    .page {
+      position: relative;
+      z-index: 1;
+      width: min(680px, calc(100% - 4rem));
+      margin: 0 auto;
+      padding: 10vh 0 8vh;
+    }
+
+    .top-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 3rem;
+      opacity: 0;
+      animation: fadeUp 0.8s ease-out 0.05s forwards;
+    }
+
+    .top-nav a {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      padding: 0.4rem 0;
+      border-bottom: 1px solid transparent;
+      transition: color 0.3s ease, border-color 0.3s ease;
+    }
+
+    .top-nav a:hover,
+    .top-nav a:focus-visible {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+    }
+
+    /* ── Kicker ── */
+    .kicker {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.8rem;
+      opacity: 0;
+      animation: fadeUp 0.8s ease-out 0.15s forwards;
+    }
+
+    /* ── Hero ── */
+    .hero {
+      margin-bottom: 3.5rem;
+      opacity: 0;
+      animation: fadeUp 0.8s ease-out 0.25s forwards;
+    }
+
+    .hero-grid {
+      display: flex;
+      align-items: center;
+      gap: 1.4rem;
+      margin-bottom: 1.1rem;
+    }
+
+    .portrait {
+      width: 76px;
+      height: 76px;
+      border-radius: 6px;
+      object-fit: cover;
+      filter: contrast(1.02);
+      flex-shrink: 0;
+    }
+
+    .name {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.6rem;
+      font-weight: 600;
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+
+    .position-line {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.18rem;
+      font-weight: 400;
+      font-style: italic;
+      line-height: 1.45;
+      color: rgba(250, 250, 250, 0.88);
+      margin-bottom: 1.2rem;
+    }
+
+    .position-line em { color: var(--accent); }
+
+    .cta-row {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--accent);
+      color: #0A0A00;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 500;
+      font-size: 0.92rem;
+      letter-spacing: 0.01em;
+      text-decoration: none;
+      padding: 0.85rem 1.6rem;
+      border-radius: 2px;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+
+    .btn-primary:hover,
+    .btn-primary:focus-visible {
+      background: var(--gold-em);
+      transform: translateY(-1px);
+    }
+
+    .link-secondary {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.88rem;
+      font-weight: 400;
+      color: var(--muted);
+      text-decoration: none;
+      border-bottom: 1px solid var(--rule);
+      transition: color 0.3s ease, border-color 0.3s ease;
+    }
+
+    .link-secondary:hover,
+    .link-secondary:focus-visible {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+    }
+
+    a:focus-visible,
+    button:focus-visible {
+      outline: 1px solid var(--accent);
+      outline-offset: 3px;
+    }
+
+    /* ── Rule ── */
+    .rule {
+      width: 60px;
+      height: 1.5px;
+      background: linear-gradient(90deg, var(--accent), transparent);
+      margin: 3rem 0;
+    }
+
+    /* ── Section label ── */
+    .section-label {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.20em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 1.2rem;
+    }
+
+    section {
+      opacity: 0;
+      animation: fadeUp 0.8s ease-out forwards;
+    }
+
+    .sec-talk { animation-delay: 0.3s; }
+    .sec-watch { animation-delay: 0.35s; }
+    .sec-said { animation-delay: 0.4s; }
+    .sec-program { animation-delay: 0.45s; }
+    .sec-booking { animation-delay: 0.5s; }
+
+    /* ── The Talk ── */
+    .talk-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.7rem;
+      font-weight: 600;
+      line-height: 1.25;
+      margin-bottom: 1.4rem;
+      color: var(--text);
+    }
+
+    .talk-abstract p {
+      color: rgba(250, 250, 250, 0.82);
+      margin-bottom: 1.2rem;
+      font-size: 1rem;
+    }
+
+    .talk-abstract p:last-child { margin-bottom: 0; }
+
+    .talk-meta {
+      margin-top: 1.8rem;
+      padding-top: 1.4rem;
+      border-top: 1px solid var(--rule);
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .talk-meta strong {
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    /* ── Watch ── */
+    .embed-frame {
+      position: relative;
+      background: var(--surface);
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+      overflow: hidden;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    .embed-frame::before {
+      content: 'Loading clip…';
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.8rem;
+      color: var(--dim);
+      z-index: 0;
+    }
+
+    .embed-frame iframe {
+      position: relative;
+      z-index: 1;
+      display: block;
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      border: 0;
+      background: var(--surface);
+    }
+
+    /* Click-to-load facade — the third-party player loads only on request,
+       so the page itself stays quiet and fast */
+    .embed-facade {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.7rem;
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      background: var(--surface);
+      border: 0;
+      cursor: pointer;
+      font-family: 'DM Sans', sans-serif;
+      transition: background 0.3s ease;
+    }
+
+    .embed-facade:hover,
+    .embed-facade:focus-visible {
+      background: #141403;
+    }
+
+    .facade-play {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 54px;
+      height: 54px;
+      border: 1px solid rgba(255,235,0,0.4);
+      border-radius: 50%;
+      color: var(--accent);
+      font-size: 1.1rem;
+      padding-left: 4px;
+      transition: background 0.3s ease;
+    }
+
+    .embed-facade:hover .facade-play,
+    .embed-facade:focus-visible .facade-play {
+      background: rgba(255,235,0,0.08);
+    }
+
+    .facade-title {
+      font-size: 0.92rem;
+      font-weight: 500;
+      color: var(--text);
+    }
+
+    .facade-sub {
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .watch-caption {
+      text-align: center;
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin-top: 1rem;
+    }
+
+    /* ── What the room said ── */
+    .pullquote {
+      border-left: 2px solid var(--accent);
+      padding-left: 1.4rem;
+      margin-bottom: 1.6rem;
+    }
+
+    .pullquote p {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-weight: 400;
+      font-size: 1.15rem;
+      line-height: 1.55;
+      color: rgba(250, 250, 250, 0.92);
+      margin-bottom: 0.8rem;
+    }
+
+    .pullquote-attr {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .proof-embeds {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem;
+      margin-top: 2rem;
+    }
+
+    .proof-card {
+      display: block;
+      background: var(--surface);
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+      padding: 1.3rem 1.4rem;
+      text-decoration: none;
+      transition: border-color 0.3s ease, background 0.3s ease;
+    }
+
+    .proof-card:hover,
+    .proof-card:focus-visible {
+      border-color: rgba(255,235,0,0.4);
+      background: #141403;
+    }
+
+    .proof-card-kicker {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.66rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.5rem;
+    }
+
+    .proof-card-title {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 400;
+      color: rgba(250, 250, 250, 0.88);
+      line-height: 1.55;
+      margin-bottom: 0.9rem;
+    }
+
+    .proof-card-link {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--accent);
+    }
+
+    @media (max-width: 600px) {
+      .proof-embeds { grid-template-columns: 1fr; }
+    }
+
+    /* ── For your program ── */
+    .bio-box {
+      background: var(--surface);
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+      padding: 1.6rem 1.8rem;
+      position: relative;
+    }
+
+    .bio-box p {
+      font-size: 0.95rem;
+      color: rgba(250, 250, 250, 0.82);
+      line-height: 1.7;
+    }
+
+    .copy-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      margin-top: 1.2rem;
+      background: none;
+      border: 1px solid var(--rule);
+      color: var(--muted);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      padding: 0.5rem 0.9rem;
+      border-radius: 2px;
+      cursor: pointer;
+      transition: color 0.3s ease, border-color 0.3s ease;
+    }
+
+    .copy-btn:hover,
+    .copy-btn:focus-visible {
+      color: var(--accent);
+      border-color: rgba(255,235,0,0.4);
+    }
+
+    /* ── Booking ── */
+    .booking-block {
+      text-align: left;
+    }
+
+    .booking-headline {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      font-weight: 500;
+      font-style: italic;
+      line-height: 1.35;
+      color: var(--text);
+      margin-bottom: 1.6rem;
+    }
+
+    .booking-headline em { color: var(--accent); }
+
+    .booking-note {
+      margin-top: 1.4rem;
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+
+    /* ── Connect / footer (match homepage) ── */
+    .social-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .social-links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.55rem 1rem;
+      border: 1px solid rgba(255,235,0,0.15);
+      border-radius: 2px;
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 400;
+      letter-spacing: 0.02em;
+      transition: all 0.3s ease;
+    }
+
+    .social-links a:hover,
+    .social-links a:focus-visible {
+      color: var(--accent);
+      border-color: rgba(255,235,0,0.4);
+      background: rgba(255,235,0,0.04);
+    }
+
+    .social-links a svg {
+      width: 15px;
+      height: 15px;
+      opacity: 0.6;
+      transition: opacity 0.3s ease;
+    }
+
+    .social-links a:hover svg, .social-links a:focus-visible svg { opacity: 1; }
+
+    footer {
+      margin-top: 5rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--rule);
+      opacity: 0;
+      animation: fadeUp 0.8s ease-out 0.6s forwards;
+    }
+
+    footer .footer-home {
+      font-size: 0.82rem;
+      color: var(--muted);
+      text-decoration: none;
+      border-bottom: 1px solid var(--rule);
+      display: inline-block;
+      margin-bottom: 1.4rem;
+      transition: color 0.3s ease, border-color 0.3s ease;
+    }
+
+    footer .footer-home:hover,
+    footer .footer-home:focus-visible {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+    }
+
+    footer p.copyright {
+      font-size: 0.72rem;
+      color: var(--dim);
+      letter-spacing: 0.04em;
+      margin-top: 1.4rem;
+    }
+
+    /* ── Animations ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .identity, .hero, .kicker, .top-nav, section, footer, .rule {
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+      }
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 600px) {
+      html { font-size: 16px; }
+      .page { width: min(680px, calc(100% - 3rem)); padding: 7vh 0 6vh; }
+      .hero-grid { flex-direction: column; gap: 1.2rem; }
+      .portrait { width: 84px; height: 84px; }
+      .name { font-size: 2rem; }
+      .position-line { font-size: 1.1rem; }
+      .talk-title { font-size: 1.4rem; }
+      .booking-headline { font-size: 1.3rem; }
+      .social-links { gap: 0.4rem; }
+      .social-links a { padding: 0.5rem 0.8rem; font-size: 0.78rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="glow"></div>
+  <div class="glow-bottom"></div>
+
+  <main class="page">
+    <nav class="top-nav" aria-label="Primary">
+      <a href="https://robertechevarria.com/">Robert Echevarria</a>
+      <a href="mailto:robert@buildwisemedia.com?subject=Speaking%20inquiry">Book Robert</a>
+    </nav>
+
+    <!-- Hero -->
+    <header class="hero">
+      <p class="kicker">Speaking</p>
+      <div class="hero-grid">
+        <!-- @r020:F1 emotion: Robert's real portrait grounds the page in the person doing the speaking, not a stock speaker cliché -->
+        <img
+          src="/robert-echevarria.webp"
+          alt="Robert Echevarria speaking to a room of business owners"
+          class="portrait"
+          width="400"
+          height="400"
+          loading="eager"
+          fetchpriority="high"
+        >
+        <h1 class="name">Robert Echevarria</h1>
+      </div>
+      <p class="position-line">I speak to rooms of business owners. My topic: how to run real <em>artificial intelligence (AI)</em> in a real business. I run an AI company myself. I am not a futurist.</p>
+      <div class="cta-row">
+        <a class="btn-primary" href="mailto:robert@buildwisemedia.com?subject=Speaking%20inquiry">Book Robert to speak</a>
+        <a class="link-secondary" href="https://www.linkedin.com/in/robertechevarria/" target="_blank" rel="noopener">or message me on LinkedIn</a>
+      </div>
+    </header>
+
+    <div class="rule"></div>
+
+    <!-- The Talk -->
+    <section class="sec-talk" aria-labelledby="talk-heading">
+      <p class="section-label">The Talk</p>
+      <h2 class="talk-title" id="talk-heading">Running AI in a Real Business</h2>
+      <div class="talk-abstract">
+        <p>Most talks on artificial intelligence (AI) cover chatbot prompts and content tricks. I show something different. I show what it looks like to run a business on AI agents, every single day.</p>
+        <p>I walk the room through where AI stands right now: <em>chatbots</em> first, then agents, then full autonomy. The next 18 months matter most for owner-led businesses.</p>
+        <p>Then I get specific. I share real examples from my own company. I also share examples from the service businesses we build for. No numbers. No client names.</p>
+        <p>I take live questions. I answer them straight.</p>
+      </div>
+      <p class="talk-meta">
+        <strong>Format:</strong> 20–30 minute talk plus open Q&amp;A. Also works as a fireside chat or panel.<br>
+        <strong>First delivered:</strong> June 25, 2026 at The Buckhead Club, Atlanta, in the Catalyst Collective "AI Conversations" series.
+      </p>
+    </section>
+
+    <div class="rule"></div>
+
+    <!-- Watch -->
+    <section class="sec-watch" aria-labelledby="watch-heading">
+      <p class="section-label" id="watch-heading">Watch</p>
+      <!-- @r020:F2 proof: 60-second highlight from the live Buckhead Club talk shows the delivery, not just a description of it -->
+      <!-- This slot swaps to the full highlight reel once it's cut. -->
+      <div class="embed-frame" id="watch-frame"
+           data-embed-src="https://www.instagram.com/p/DagPZhVGmnw/embed"
+           data-embed-title="60-second highlight clip from Robert Echevarria's talk at The Buckhead Club, Atlanta">
+        <button class="embed-facade" type="button" id="watch-load"
+                aria-label="Load and play the 60-second highlight clip">
+          <span class="facade-play" aria-hidden="true">&#9654;</span>
+          <span class="facade-title">Play the 60-second highlight</span>
+          <span class="facade-sub">The Buckhead Club, Atlanta &mdash; June 25, 2026</span>
+        </button>
+      </div>
+      <p class="watch-caption">60-second highlight — The Buckhead Club, Atlanta</p>
+    </section>
+
+    <div class="rule"></div>
+
+    <!-- What the room said -->
+    <section class="sec-said" aria-labelledby="said-heading">
+      <p class="section-label" id="said-heading">What the Room Said</p>
+
+      <!-- @r020:F2 proof: verbatim attendee reaction, editorial-citation register, not a testimonial card -->
+      <blockquote class="pullquote">
+        <p>"I walked away with a completely different perspective on AI agents. … He demonstrated how AI agents can be used to create real efficiency, improve productivity, and automate business processes in ways that allow business owners and their teams to focus on higher-value work."</p>
+        <p class="pullquote-attr">— Tomiyo Williams, Founder &amp; CEO, The Brancise Agency (attended the talk)</p>
+      </blockquote>
+
+      <!-- @r020:F2 proof: verbatim host reaction, editorial-citation register -->
+      <blockquote class="pullquote">
+        <p>"A special thank you to our host, Robert Echevarria, for leading such an insightful and thought-provoking conversation. Your ability to make complex AI topics approachable sparked meaningful dialogue and great questions from the audience."</p>
+        <p class="pullquote-attr">— The Buckhead Club, Atlanta (host, from their LinkedIn post)</p>
+      </blockquote>
+
+      <!-- @sdt-exempt: HRE-identity surface — SDT density lock is scoped to BWM-owned marketing surfaces (identity update 2026-07-15); event photos stay on the club's own LinkedIn post (rights not cleared for re-hosting) -->
+      <div class="proof-embeds">
+        <!-- @r020:F2 proof: attendee's own post linked as third-party evidence of the quote above -->
+        <a class="proof-card" href="https://www.linkedin.com/feed/update/urn:li:ugcPost:7476796755762819072/" target="_blank" rel="noopener">
+          <p class="proof-card-kicker">Attendee post</p>
+          <p class="proof-card-title">Tomiyo Williams shared her own video of the talk and what she took away from it.</p>
+          <p class="proof-card-link">Read her post on LinkedIn &nearr;</p>
+        </a>
+        <!-- @r020:F2 proof: host venue's own photo post linked as third-party evidence of the event -->
+        <a class="proof-card" href="https://www.linkedin.com/feed/update/urn:li:activity:7476316975573590016/" target="_blank" rel="noopener">
+          <p class="proof-card-kicker">From the host</p>
+          <p class="proof-card-title">The Buckhead Club posted its own photos and thank-you from the evening.</p>
+          <p class="proof-card-link">See the club's photos on LinkedIn &nearr;</p>
+        </a>
+      </div>
+    </section>
+
+    <div class="rule"></div>
+
+    <!-- For your program -->
+    <section class="sec-program" aria-labelledby="program-heading">
+      <p class="section-label" id="program-heading">For Your Program</p>
+      <div class="bio-box">
+        <p id="bio-copy-text">Robert Echevarria is the founder and CEO of an AI-native company in Atlanta. His company builds and runs AI systems for service businesses. He speaks about what it takes to run a real business on AI today. He speaks plainly, from daily practice.</p>
+        <button class="copy-btn" type="button" id="copy-bio-btn" aria-label="Copy this bio paragraph to your clipboard">Copy bio</button>
+      </div>
+    </section>
+
+    <div class="rule"></div>
+
+    <!-- Booking -->
+    <section class="sec-booking" aria-labelledby="booking-heading">
+      <p class="section-label" id="booking-heading">Booking</p>
+      <div class="booking-block">
+        <p class="booking-headline">Have a room of business owners? I'll bring the <em>real</em> version of AI.</p>
+        <div class="cta-row">
+          <a class="btn-primary" href="mailto:robert@buildwisemedia.com?subject=Speaking%20inquiry">Book Robert to speak</a>
+          <a class="link-secondary" href="https://www.linkedin.com/in/robertechevarria/" target="_blank" rel="noopener">or message me on LinkedIn</a>
+        </div>
+        <p class="booking-note">Based in Atlanta. I speak in person across the Southeast. I speak virtually anywhere.</p>
+      </div>
+    </section>
+
+    <footer>
+      <a class="footer-home" href="https://robertechevarria.com/">← robertechevarria.com</a>
+      <div class="social-links">
+        <a href="https://www.linkedin.com/in/robertechevarria/" target="_blank" rel="noopener">
+          <!-- @r020:F3 cta-pull: platform mark makes the outbound LinkedIn action scannable without adding decorative imagery -->
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          LinkedIn
+        </a>
+        <a href="https://x.com/heyroberte" target="_blank" rel="noopener">
+          <!-- @r020:F3 cta-pull: platform mark makes the outbound X action scannable without adding decorative imagery -->
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          X
+        </a>
+        <a href="https://www.instagram.com/heyroberte/" target="_blank" rel="noopener">
+          <!-- @r020:F3 cta-pull: platform mark makes the outbound Instagram action scannable without adding decorative imagery -->
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          Instagram
+        </a>
+        <a href="https://www.youtube.com/@heyroberte" target="_blank" rel="noopener">
+          <!-- @r020:F3 cta-pull: platform mark makes the outbound YouTube action scannable without adding decorative imagery -->
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          YouTube
+        </a>
+      </div>
+      <p class="copyright">Atlanta, GA</p>
+    </footer>
+  </main>
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Robert Echevarria",
+    "image": "https://robertechevarria.com/robert-echevarria-og.jpg",
+    "url": "https://robertechevarria.com/speaking/",
+    "sameAs": [
+      "https://www.linkedin.com/in/robertechevarria/",
+      "https://x.com/heyroberte",
+      "https://www.instagram.com/heyroberte/",
+      "https://www.youtube.com/@heyroberte"
+    ],
+    "jobTitle": "Founder & CEO",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Buildwise Media",
+      "url": "https://buildwisemedia.com"
+    },
+    "description": "Robert Echevarria speaks to rooms of business owners about running artificial intelligence (AI) in a real business — as the operator of an AI company, not a futurist.",
+    "knowsAbout": ["Artificial Intelligence", "Marketing Automation", "Service Business Operations", "AI Implementation", "Public Speaking"],
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Atlanta",
+      "addressRegion": "GA",
+      "addressCountry": "US"
+    }
+  }
+  </script>
+
+  <!-- Conversion event wiring -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      document.querySelectorAll('a[href^="mailto:robert@buildwisemedia.com"]').forEach(function(a) {
+        a.addEventListener('click', function() {
+          gtag('event', 'speaking_inquiry_click', { cta_source: 'speaking_page' });
+        });
+      });
+
+      var linkedinLinks = document.querySelectorAll('a[href*="linkedin.com/in/robertechevarria"]');
+      linkedinLinks.forEach(function(a) {
+        a.addEventListener('click', function() {
+          gtag('event', 'speaking_linkedin_click', { cta_source: 'speaking_page' });
+        });
+      });
+
+      var watchFrame = document.getElementById('watch-frame');
+      var watchBtn = document.getElementById('watch-load');
+      if (watchFrame && watchBtn) {
+        watchBtn.addEventListener('click', function() {
+          var f = document.createElement('iframe');
+          f.src = watchFrame.getAttribute('data-embed-src');
+          f.title = watchFrame.getAttribute('data-embed-title');
+          f.allowFullscreen = true;
+          watchFrame.replaceChild(f, watchBtn);
+          gtag('event', 'speaking_clip_play', { cta_source: 'speaking_page' });
+        });
+      }
+
+      var copyBtn = document.getElementById('copy-bio-btn');
+      var bioText = document.getElementById('bio-copy-text');
+      if (copyBtn && bioText) {
+        copyBtn.addEventListener('click', function() {
+          var text = bioText.innerText;
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(text).then(function() {
+              var original = copyBtn.textContent;
+              copyBtn.textContent = 'Copied';
+              setTimeout(function() { copyBtn.textContent = original; }, 2000);
+            });
+          }
+          gtag('event', 'speaker_bio_copy', { cta_source: 'speaking_page' });
+        });
+      }
+
+      var socialMap = {
+        'linkedin.com': 'linkedin',
+        'x.com': 'x',
+        'instagram.com': 'instagram',
+        'youtube.com': 'youtube'
+      };
+      document.querySelectorAll('.social-links a').forEach(function(a) {
+        var platform = 'unknown';
+        Object.keys(socialMap).forEach(function(host) {
+          if (a.href.indexOf(host) !== -1) platform = socialMap[host];
+        });
+        a.addEventListener('click', function() {
+          gtag('event', 'social_outbound', { platform: platform, cta_source: 'speaking_page' });
+        });
+      });
+    });
+  </script>
+</body>
+</html>
