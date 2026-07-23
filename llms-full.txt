@@ -6,7 +6,7 @@
 
 Most operators don't have a strategy problem. They have a tooling problem. The strategy is fine. The instinct is fine. What's missing is the system that turns instinct into compounding output — and three years from now, that system is the only thing separating the operators who scaled from the ones who got priced out.
 
-I run an AI-native marketing agency for service businesses doing $1M–$5M in revenue. Our team builds the systems other operators are still figuring out how to scope. I write here for everyone else trying to figure out what's real.
+I run an AI-native marketing agency for service businesses doing $3M–$8M in revenue. Our team builds the systems other operators are still figuring out how to scope. I write here for everyone else trying to figure out what's real.
 
 ## What I'm Working Out in Public
 
@@ -18,7 +18,7 @@ I run an AI-native marketing agency for service businesses doing $1M–$5M in re
 
 ## Buildwise Media
 
-AI-native marketing agency for service businesses in the $1M–$5M revenue range. Full-service marketing execution — strategy, websites, content, ads, SEO, automation — powered by AI agents and a proprietary knowledge system called the Brain. Month-to-month, no lock-in. Based in Atlanta, GA.
+AI-native marketing agency for service businesses in the $3M–$8M revenue range. Full-service marketing execution — strategy, websites, content, ads, SEO, automation — powered by AI agents and a proprietary knowledge system called the Brain. Month-to-month, no lock-in. Based in Atlanta, GA.
 
 Website: https://buildwisemedia.com
 

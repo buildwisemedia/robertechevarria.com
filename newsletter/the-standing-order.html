@@ -28,16 +28,20 @@
   <!-- Canonical -->
   <link rel="canonical" href="https://robertechevarria.com/newsletter/the-standing-order">
 
-  <!-- GTM (same container as BWM — cross-property tracking via GA4 streams) -->
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-P5JSD86L');</script>
+  <!-- Dedicated personal-brand GA4 stream -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-39NT50LZYT"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-39NT50LZYT');
+  </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/newsletter-signup.css">
+  <script src="/newsletter-signup.js" defer></script>
 
   <!-- Structured Data -->
   <script type="application/ld+json">
@@ -1637,7 +1641,7 @@
           <h1 id="page-title">We were the bottleneck of our own AI. One pattern <em>fixed</em> it.</h1>
           <p class="dek">I build complex projects with an AI co-builder. We go down rabbit holes. I lose track of what's done. So does the AI. So we built one prompt that audits every previous phase, confirms where we are in the system, builds the next phase, and loops until the project ships.</p>
 
-          <div class="outcome-strip" aria-label="Primary outcomes">
+          <div class="outcome-strip" role="group" aria-label="Primary outcomes">
             <div class="outcome"><b>Less time</b><span>The dispatch ritual moves out of your head.</span></div>
             <div class="outcome"><b>Fewer tokens</b><span>Context stops getting reconstructed every session.</span></div>
             <div class="outcome"><b>Less drift</b><span>State becomes visible before new work starts.</span></div>
@@ -1668,8 +1672,8 @@
               <line x1="80" y1="124" x2="80" y2="82" stroke="rgba(255, 215, 0,0.8)" stroke-width="1.4" stroke-dasharray="4 5"></line><text x="80" y="60" text-anchor="middle" fill="#FFD700" font-family="DM Sans" font-size="12" font-weight="700">YOU</text><text x="80" y="342" fill="rgba(250, 250, 250,0.48)" font-family="Playfair Display, Georgia" font-size="13" font-style="italic">The human edits the rule. The rule carries the workflow.</text>
             </svg>
           </div>
-          <div class="evidence-ticker" aria-label="System evidence ticker"><div class="ticker-track"><span>Audit queued</span><span>State confirmed</span><span>Risk removed</span><span>Next phase bounded</span><span>Receipt written</span><span>Audit queued</span><span>State confirmed</span><span>Risk removed</span><span>Next phase bounded</span><span>Receipt written</span></div></div>
-          <div class="preview-grid" aria-label="Standing order preview cards"><div class="preview-card"><b>01 Audit</b><span>Find the truth before motion begins.</span></div><div class="preview-card"><b>02 Build</b><span>Advance only the next bounded phase.</span></div><div class="preview-card"><b>03 Receipt</b><span>Leave evidence for the next session.</span></div></div>
+          <div class="evidence-ticker" role="group" aria-label="System evidence ticker"><div class="ticker-track"><span>Audit queued</span><span>State confirmed</span><span>Risk removed</span><span>Next phase bounded</span><span>Receipt written</span><span>Audit queued</span><span>State confirmed</span><span>Risk removed</span><span>Next phase bounded</span><span>Receipt written</span></div></div>
+          <div class="preview-grid" role="group" aria-label="Standing order preview cards"><div class="preview-card"><b>01 Audit</b><span>Find the truth before motion begins.</span></div><div class="preview-card"><b>02 Build</b><span>Advance only the next bounded phase.</span></div><div class="preview-card"><b>03 Receipt</b><span>Leave evidence for the next session.</span></div></div>
         </aside>
       </section>
 
@@ -1866,7 +1870,7 @@
                               </div>
                             </div>
                           </div>
-                          <div class="legend-grid" aria-label="Bar legend">
+                          <div class="legend-grid" role="group" aria-label="Bar legend">
                             <div class="legend-item"><i class="swatch muted"></i><span>Dispatch or audit</span></div>
                             <div class="legend-item"><i class="swatch coral"></i><span>Clarifying old state</span></div>
                             <div class="legend-item"><i class="swatch"></i><span>Actual output</span></div>
@@ -1987,13 +1991,13 @@
             <p class="section-kicker">07 - If you are the bottleneck</p>
             <h2 id="cta-title">The fix is a pattern you can <em>own</em>.</h2>
             <p>If you run an owner-led service business doing $3M to $15M in annual revenue, and you are sick of being the connective tissue between fragmented tools and fragmented advice, that bottleneck is the bridge.</p>
-            <p style="margin-top:18px;"><a href="https://buildwisemedia.com">Buildwise Media</a> installs the operating system that runs the business outside the owner's head, on the owner's domain, with the owner keeping the asset.</p>
+            <p style="margin-top:18px;"><a href="https://buildwisemedia.com/?utm_source=robertechevarria.com&amp;utm_medium=referral&amp;utm_campaign=personal_brand&amp;utm_content=standing_order_body">Buildwise Media</a> installs the operating system that runs the business outside the owner's head, on the owner's domain, with the owner keeping the asset.</p>
             <p style="margin-top:18px;">The work is not handing you more software to manage. The work is extracting the standards already inside the business, turning them into standing orders, and making the operation legible enough to run without constant owner translation.</p>
           </div>
           <aside class="receipt-preview" aria-label="Static standing order prompt preview">
             <header><b>Prompt receipt preview</b><span>Static</span></header>
             <p class="prompt-preview" id="prompt-preview-text">Audit the current operating state, name what is true, identify the next bounded phase, refuse unsafe motion, and leave a receipt the next session can trust.</p>
-            <div class="prompt-actions"><button class="copy-preview" type="button" data-copy-target="prompt-preview-text" aria-live="polite">Copy preview</button><a class="cta-button" href="https://buildwisemedia.com">Build the operating system</a></div>
+            <div class="prompt-actions"><button class="copy-preview" type="button" data-copy-target="prompt-preview-text" aria-live="polite">Copy preview</button><a class="cta-button" href="https://buildwisemedia.com/?utm_source=robertechevarria.com&amp;utm_medium=referral&amp;utm_campaign=personal_brand&amp;utm_content=standing_order_cta">Build the operating system</a></div>
           </aside>
         </div>
       </section>
@@ -2003,10 +2007,22 @@
 
     <footer class="newsletter-footer">
       <p class="newsletter-desc">The Dark Factory is a weekly newsletter about building with AI at the business level. Not theory. Not hype. What's actually working, what's actually changing, and what to do about it.</p>
+      <form class="df-signup" data-newsletter-signup data-signup-location="article_standing_order">
+        <h2 class="df-signup__heading">Get the next issue.</h2>
+        <p class="df-signup__dek">One rational field note at a time. No hype cycle. No content factory.</p>
+        <div class="df-signup__fields">
+          <label>Name <span aria-hidden="true">(optional)</span><input type="text" name="name" autocomplete="name" placeholder="Your name"></label>
+          <label>Email<input type="email" name="email" autocomplete="email" inputmode="email" placeholder="you@company.com" required></label>
+        </div>
+        <label class="df-signup__consent"><input type="checkbox" name="consent" required><span>Email me The Dark Factory. Unsubscribe anytime. See the <a href="/privacy">Privacy Policy</a>.</span></label>
+        <div class="df-signup__honeypot" inert><label>Business URL<input type="text" name="business_url" tabindex="-1" autocomplete="off"></label></div>
+        <button class="df-signup__button">Send me the next issue</button>
+        <p class="df-signup__status" role="status" aria-live="polite"></p>
+      </form>
       <p class="section-label">Connect</p>
       <div class="social-links"><a href="https://www.linkedin.com/in/robertechevarria/" target="_blank" rel="noopener">LinkedIn</a><a href="https://x.com/heyroberte" target="_blank" rel="noopener">X</a><a href="https://www.instagram.com/heyroberte/" target="_blank" rel="noopener">Instagram</a><a href="https://www.youtube.com/@heyroberte" target="_blank" rel="noopener">YouTube</a></div>
       <div class="full-rule"></div>
-      <p class="footer-text">Atlanta, GA</p><p class="footer-text">You're receiving this because you signed up at robertechevarria.com or connected with me directly.</p><p class="footer-text"><a href="#unsubscribe">Unsubscribe</a> &nbsp;&middot;&nbsp; <a href="#preferences">Manage preferences</a></p>
+      <p class="footer-text">Atlanta, GA</p><p class="footer-text"><a href="/privacy">Privacy</a> &nbsp;&middot;&nbsp; <a href="/terms">Terms</a></p>
     </footer>
   </div>
 
@@ -2015,7 +2031,12 @@
     const articleTitle = "We Were the Bottleneck of Our Own AI";
     const articleSlug = "the-standing-order";
     const pushEvent = (event, detail = {}) => {
-      window.dataLayer.push({ event, page_type: "newsletter", article_title: articleTitle, article_slug: articleSlug, ...detail });
+      const payload = { page_type: "newsletter", article_title: articleTitle, article_slug: articleSlug, ...detail };
+      if (typeof window.gtag === "function") {
+        window.gtag("event", event, payload);
+      } else {
+        window.dataLayer.push({ event, ...payload });
+      }
     };
     const sectionMeta = {
       problem: { phase: "Operation 01", operation: "Audit the state split", evidence: "Reality, human estimate, and AI estimate diverge.", risk: "Building on an implied project state.", next: "Confirm the true state before moving." },
