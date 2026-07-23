@@ -1,0 +1,24 @@
+preflight_version: 4
+marker_version: v4
+client: robert-echevarria
+surface: website
+identity_class: hre
+composition_mode: single
+resolver_version: 1.0.0
+resolver_hash: f22653ac16d5886db96943f4b051a6a13038d17f
+identity_record_path: _verification/design-identity-resolution.yaml
+identity_record_hash: 5d90ab99f8cc670643b65a831579ad70d2e19cefb195bd69ca229081f778de28
+source_manifest_path: _verification/source-manifest.yaml
+source_manifest_hash: 6907bc6ed380f4b21452d8927954383f8ec530ccbf34306f054d7f585fff8420
+asset_manifest_path: _verification/asset-manifest.yaml
+asset_manifest_hash: 44b88471c4e227c7bfaacce6262a8756bf54424d6feb50a06314c4d290b4768e
+ndb_path: brand/Robert-Personal-Brand-Identity.md
+ndb_schema: hre-yellow-alert-v1.0
+ndb_hash: c74b40ded5c18ee27b900cb97b970d67e1abe6ae
+target_state: production_after_qa
+change_scope: analytics recovery with functional newsletter capture, real conversion events, referral attribution, search plumbing, and required legal pages
+visual_change_allowed: true
+base_commit: 6d09ee73d721bc8fb37f35e66fdf6665dcc04cba
+creator: codex-gpt-5.6-sol
+approved_at: 2026-07-23T16:55:45-04:00
+deployment_allowed: true

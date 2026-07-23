@@ -28,16 +28,20 @@
   <!-- Canonical -->
   <link rel="canonical" href="https://robertechevarria.com/newsletter/the-harder-you-work">
 
-  <!-- GTM (same container as BWM — cross-property tracking via GA4 streams) -->
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-P5JSD86L');</script>
+  <!-- Dedicated personal-brand GA4 stream -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-39NT50LZYT"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-39NT50LZYT');
+  </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/newsletter-signup.css">
+  <script src="/newsletter-signup.js" defer></script>
 
   <!-- Structured Data -->
   <script type="application/ld+json">
@@ -606,6 +610,19 @@
       <!-- ═══ NEWSLETTER DESCRIPTION ═══ -->
       <p class="newsletter-desc">The Dark Factory is a weekly newsletter about building with AI at the business level. Not theory. Not hype. What's actually working, what's actually changing, and what to do about it.</p>
 
+      <form class="df-signup" data-newsletter-signup data-signup-location="article_harder_you_work">
+        <h2 class="df-signup__heading">Get the next issue.</h2>
+        <p class="df-signup__dek">One rational field note at a time. No hype cycle. No content factory.</p>
+        <div class="df-signup__fields">
+          <label>Name <span aria-hidden="true">(optional)</span><input type="text" name="name" autocomplete="name" placeholder="Your name"></label>
+          <label>Email<input type="email" name="email" autocomplete="email" inputmode="email" placeholder="you@company.com" required></label>
+        </div>
+        <label class="df-signup__consent"><input type="checkbox" name="consent" required><span>Email me The Dark Factory. Unsubscribe anytime. See the <a href="/privacy">Privacy Policy</a>.</span></label>
+        <div class="df-signup__honeypot" inert><label>Business URL<input type="text" name="business_url" tabindex="-1" autocomplete="off"></label></div>
+        <button class="df-signup__button">Send me the next issue</button>
+        <p class="df-signup__status" role="status" aria-live="polite"></p>
+      </form>
+
       <!-- ═══ CONNECT ═══ -->
       <div style="margin-top:1.6rem;">
         <p class="section-label">Connect</p>
@@ -621,9 +638,8 @@
       <footer style="margin-top:2rem;">
         <div class="full-rule"></div>
         <p class="footer-text" style="margin-top:1.2rem;">Atlanta, GA</p>
-        <p class="footer-text" style="margin-top:0.4rem;">You're receiving this because you signed up at robertechevarria.com or connected with me directly.</p>
         <p class="footer-text" style="margin-top:0.8rem;">
-          <a href="#unsubscribe">Unsubscribe</a> &nbsp;&middot;&nbsp; <a href="#preferences">Manage preferences</a>
+          <a href="/privacy">Privacy</a> &nbsp;&middot;&nbsp; <a href="/terms">Terms</a>
         </p>
       </footer>
 
@@ -634,9 +650,7 @@
     document.querySelectorAll('.social-links a').forEach(function(link) {
       link.addEventListener('click', function() {
         var platform = this.textContent.trim().toLowerCase();
-        window.dataLayer = window.dataLayer || [];
-        window.dataLayer.push({
-          event: 'social_click',
+        window.gtag('event', 'social_click', {
           social_platform: platform,
           page_type: 'newsletter'
         });
@@ -662,9 +676,7 @@
             milestones.forEach(function(m) {
               if (pct >= m && !fired[m]) {
                 fired[m] = true;
-                window.dataLayer = window.dataLayer || [];
-                window.dataLayer.push({
-                  event: 'scroll_depth',
+                window.gtag('event', 'scroll_depth', {
                   scroll_milestone: m,
                   page_type: 'newsletter',
                   article_title: 'The Harder You Work'

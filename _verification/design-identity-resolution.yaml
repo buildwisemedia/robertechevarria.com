@@ -1,0 +1,22 @@
+schema_version: "1.0"
+resolver:
+  path: "reference/Design-Identity-Resolver.md"
+  version: "1.0.0"
+  git_blob_hash: "f22653ac16d5886db96943f4b051a6a13038d17f"
+surface:
+  client: "robert-echevarria"
+  type: "website"
+  domain: "robertechevarria.com"
+resolution:
+  identity_class: "hre"
+  composition_mode: "single"
+  primary_identity_path: "brand/Robert-Personal-Brand-Identity.md"
+  primary_identity_git_blob_hash: "c74b40ded5c18ee27b900cb97b970d67e1abe6ae"
+  secondary_identities: []
+  forbidden_identities:
+    - "bwm"
+  system_name: "Yellow Alert"
+  status: "locked"
+decision:
+  reason: "Robert's personal brand and domain resolve to the HRE identity class."
+  visual_change_scope: "functional newsletter form, legal links, and conversion plumbing inside the existing Yellow Alert system"

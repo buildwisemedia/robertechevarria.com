@@ -27,3 +27,15 @@
 
 /sitemap.xml
   Content-Type: application/xml; charset=utf-8
+
+/privacy
+  Cache-Control: public, max-age=3600
+
+/terms
+  Cache-Control: public, max-age=3600
+
+/newsletter-signup.css
+  Cache-Control: public, max-age=3600
+
+/newsletter-signup.js
+  Cache-Control: public, max-age=3600
