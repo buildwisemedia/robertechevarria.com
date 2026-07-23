@@ -1,6 +1,5 @@
 User-agent: *
 Allow: /
-Content-Signal: search=yes, ai-train=yes, ai-input=yes
 
 # AI crawlers — explicitly permitted per BWM Canonical Site Files lock (6 required + 2 recommended)
 User-agent: GPTBot
