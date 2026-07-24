@@ -9,12 +9,14 @@ Robert Echevarria runs AI in a real business every day. He founded an AI-native 
 ## Services
 
 - **Buildwise Media** — AI-native marketing agency for service businesses ($3M–$8M revenue). Full-service marketing execution powered by AI agents and automation. Atlanta, GA. https://buildwisemedia.com
+- **Speaking** — Practical talks for owners and leadership teams on running AI inside a real business, where human judgment still matters, and which decisions to make next.
 - **The Dark Factory Newsletter** — Writing about building with AI at the business level. Not theory. Not hype. What's actually working, what's actually changing, and what to do about it.
 - **LinkedIn long-form** — Posts on AI adoption, business operations, what the technology actually does today. First-person, working-it-out register.
 
 ## Pages
 
 - [Homepage](https://robertechevarria.com/): Bio, positioning, social links, newsletter signup
+- [Speaking](https://robertechevarria.com/speaking): Speaker reel, event proof, talk abstract, audience takeaways, formats, and direct booking inquiry
 - [The Standing Order](https://robertechevarria.com/newsletter/the-standing-order): Newsletter issue on the standing prompt pattern Robert uses to keep AI-assisted projects audited, bounded, and shippable across sessions
 - [The Harder You Work](https://robertechevarria.com/newsletter/the-harder-you-work): Newsletter issue on why AI makes high performers work more, not less
 

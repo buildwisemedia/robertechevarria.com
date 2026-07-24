@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>/* Disable production analytics on local and branch previews. */(function(){var h=location.hostname,p=h.split('.');if((/\.pages\.dev$/.test(h)&&p.length>3)||h==='localhost'||h==='127.0.0.1'||h==='0.0.0'||h===''){window['ga-disable-G-39NT50LZYT']=true;}})();</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Robert Echevarria — Speaker on Running AI in a Real Business</title>
+  <meta name="description" content="Bring Robert Echevarria's practical AI talk to your room. Built for owners and leadership teams deciding what to deploy, where humans still matter, and what to do next.">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+  <meta property="og:title" content="Robert Echevarria — Running AI in a Real Business">
+  <meta property="og:description" content="A practical AI talk for owners, operators, and leadership teams.">
+  <meta property="og:image" content="https://robertechevarria.com/speaking/assets/robert-echevarria-speaker-reel-poster.jpg">
+  <meta property="og:image:width" content="1920">
+  <meta property="og:image:height" content="1080">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://robertechevarria.com/speaking">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://robertechevarria.com/speaking/assets/robert-echevarria-speaker-reel-poster.jpg">
+  <meta name="twitter:creator" content="@heyroberte">
+  <link rel="canonical" href="https://robertechevarria.com/speaking">
+  <link rel="preload" as="image" href="/speaking/assets/buckhead-club-1.jpg" fetchpriority="high">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-39NT50LZYT"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-39NT50LZYT');
+  </script>
+
+  <style>
+    @font-face {
+      font-family: "HRE Display";
+      src: url("/speaking/assets/fonts/PlayfairDisplay-Variable.ttf") format("truetype");
+      font-weight: 400 900;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "HRE Sans";
+      src: url("/speaking/assets/fonts/DMSans-Variable.ttf") format("truetype");
+      font-weight: 100 900;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    :root {
+      --canvas: #050505;
+      --surface: #0e0e0e;
+      --surface-2: #151515;
+      --text: #fafafa;
+      --muted: #a19b92;
+      --dim: #716b62;
+      --accent: #ffeb00;
+      --gold: #ffd700;
+      --rule: rgba(255, 235, 0, 0.16);
+      --soft-rule: rgba(250, 250, 250, 0.11);
+      --max: 1240px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 96px; }
+    body {
+      margin: 0;
+      background: var(--canvas);
+      color: var(--text);
+      font-family: "HRE Sans", sans-serif;
+      font-size: 18px;
+      font-weight: 350;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: 20;
+      pointer-events: none;
+      opacity: .48;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 220 220' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.92' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.035'/%3E%3C/svg%3E");
+    }
+    img, video { display: block; max-width: 100%; }
+    a { color: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+
+    .skip {
+      position: absolute;
+      left: 1rem;
+      top: -5rem;
+      z-index: 100;
+      background: var(--accent);
+      color: #050505;
+      padding: .75rem 1rem;
+      font-weight: 700;
+    }
+    .skip:focus { top: 1rem; }
+
+    .shell { width: min(var(--max), calc(100% - 64px)); margin-inline: auto; }
+    .eyebrow {
+      margin: 0;
+      color: var(--accent);
+      font-size: .68rem;
+      font-weight: 700;
+      letter-spacing: .24em;
+      line-height: 1.4;
+      text-transform: uppercase;
+    }
+    .lede { color: rgba(250,250,250,.72); font-size: 1.12rem; line-height: 1.7; }
+    .section-rule { height: 1px; background: var(--rule); }
+
+    .site-header {
+      position: absolute;
+      inset: 0 0 auto;
+      z-index: 10;
+      height: 96px;
+      display: flex;
+      align-items: center;
+    }
+    .site-header__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+    .wordmark {
+      display: inline-flex;
+      align-items: center;
+      gap: .72rem;
+      text-decoration: none;
+      font-size: .76rem;
+      font-weight: 700;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+    .wordmark::before {
+      content: "";
+      width: 28px;
+      height: 3px;
+      background: var(--accent);
+    }
+    .nav { display: flex; align-items: center; gap: 1.7rem; }
+    .nav a {
+      color: rgba(250,250,250,.7);
+      font-size: .72rem;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: color .2s ease;
+    }
+    .nav a:hover { color: var(--accent); }
+    .nav .nav-cta {
+      border: 1px solid rgba(255,235,0,.42);
+      color: var(--text);
+      padding: .7rem 1rem;
+    }
+
+    .hero {
+      min-height: 780px;
+      position: relative;
+      display: grid;
+      align-items: center;
+      overflow: hidden;
+      border-bottom: 1px solid var(--rule);
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 760px;
+      height: 760px;
+      left: -320px;
+      top: -280px;
+      background: radial-gradient(circle, rgba(255,235,0,.085), transparent 67%);
+      pointer-events: none;
+    }
+    .hero__grid {
+      display: grid;
+      grid-template-columns: minmax(0, .94fr) minmax(430px, .86fr);
+      gap: clamp(3rem, 7vw, 7rem);
+      align-items: center;
+      padding: 150px 0 84px;
+    }
+    .hero h1 {
+      max-width: 760px;
+      margin: 1.35rem 0 1.3rem;
+      font-family: "HRE Display", serif;
+      font-size: clamp(4rem, 7vw, 7.2rem);
+      font-weight: 600;
+      letter-spacing: -.055em;
+      line-height: .92;
+    }
+    .hero h1 em { color: var(--accent); font-weight: 600; }
+    .hero .lede { max-width: 640px; margin: 0; }
+    .hero__actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: center;
+      margin-top: 2.25rem;
+    }
+    .button {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 54px;
+      padding: .8rem 1.25rem;
+      border: 1px solid var(--accent);
+      background: var(--accent);
+      color: #050505;
+      font-size: .78rem;
+      font-weight: 750;
+      letter-spacing: .08em;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: transform .2s ease, background .2s ease, color .2s ease;
+    }
+    .button:hover { transform: translateY(-2px); background: #fff56b; }
+    .button--ghost { background: transparent; color: var(--text); border-color: rgba(250,250,250,.28); }
+    .button--ghost:hover { background: rgba(250,250,250,.06); color: var(--accent); }
+    .hero__proof {
+      position: relative;
+      padding: 0 0 28px 28px;
+    }
+    .hero__proof::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 72%;
+      height: 74%;
+      border: 1px solid var(--rule);
+      background: rgba(255,235,0,.018);
+    }
+    .hero__photo {
+      position: relative;
+      aspect-ratio: 3/4;
+      overflow: hidden;
+      background: var(--surface);
+    }
+    .hero__photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 64%; }
+    .hero__caption {
+      position: absolute;
+      right: 18px;
+      bottom: 0;
+      z-index: 2;
+      width: min(340px, 75%);
+      margin: 0;
+      padding: 1rem 1.1rem;
+      border-top: 3px solid var(--accent);
+      background: rgba(5,5,5,.94);
+      color: var(--muted);
+      font-size: .7rem;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .facts { border-bottom: 1px solid var(--rule); }
+    .facts__grid { display: grid; grid-template-columns: repeat(4, 1fr); }
+    .fact { min-height: 116px; padding: 1.6rem 1.45rem; border-right: 1px solid var(--rule); }
+    .fact:first-child { border-left: 1px solid var(--rule); }
+    .fact span { display: block; margin-bottom: .42rem; color: var(--dim); font-size: .63rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; }
+    .fact strong { font-family: "HRE Display", serif; font-size: 1.08rem; font-weight: 500; line-height: 1.3; }
+
+    .reel { padding: clamp(5rem, 9vw, 9rem) 0; }
+    .reel__head {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: end;
+      margin-bottom: 2.8rem;
+    }
+    .reel h2, .talk h2, .about h2, .booking h2 {
+      max-width: 780px;
+      margin: .7rem 0 0;
+      font-family: "HRE Display", serif;
+      font-size: clamp(2.7rem, 5vw, 5.3rem);
+      font-weight: 600;
+      letter-spacing: -.045em;
+      line-height: 1;
+    }
+    h2 em { color: var(--accent); font-weight: 600; }
+    .reel__head .lede { margin: 0; }
+    .video-frame {
+      position: relative;
+      border: 1px solid var(--rule);
+      background: #050505;
+      box-shadow: 0 44px 120px rgba(0,0,0,.42);
+    }
+    .video-frame::before {
+      content: "01  /  SPEAKER REEL";
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 2;
+      padding: .7rem .82rem;
+      background: var(--accent);
+      color: #050505;
+      font-size: .62rem;
+      font-weight: 800;
+      letter-spacing: .12em;
+    }
+    .video-frame video { width: 100%; aspect-ratio: 16/9; background: #050505; }
+    .media-note { margin: 1rem 0 0; color: var(--dim); font-size: .72rem; letter-spacing: .04em; }
+
+    .talk {
+      padding: clamp(5rem, 10vw, 10rem) 0;
+      border-top: 1px solid var(--rule);
+      background: linear-gradient(135deg, rgba(255,235,0,.025), transparent 35%);
+    }
+    .talk__grid { display: grid; grid-template-columns: minmax(0, 1.06fr) minmax(330px, .64fr); gap: clamp(4rem, 9vw, 8rem); }
+    .talk__copy .lede { max-width: 760px; margin: 2rem 0 0; }
+    .talk__copy p:not(.eyebrow):not(.lede) { max-width: 760px; color: rgba(250,250,250,.7); }
+    .takeaways {
+      margin-top: 3rem;
+      border-top: 1px solid var(--rule);
+    }
+    .takeaway {
+      display: grid;
+      grid-template-columns: 54px 1fr;
+      gap: 1.2rem;
+      padding: 1.35rem 0;
+      border-bottom: 1px solid var(--rule);
+    }
+    .takeaway span { color: var(--accent); font-size: .68rem; font-weight: 700; letter-spacing: .14em; }
+    .takeaway p { margin: 0; color: rgba(250,250,250,.78); }
+    .talk__aside {
+      align-self: start;
+      border-top: 3px solid var(--accent);
+      background: var(--surface);
+      padding: 2rem;
+    }
+    .talk__photo {
+      aspect-ratio: 4/3;
+      margin: -2rem -2rem 2rem;
+      overflow: hidden;
+      border-bottom: 1px solid var(--rule);
+    }
+    .talk__photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 35%; }
+    .talk__aside h3 { margin: 0 0 1.5rem; font-family: "HRE Display", serif; font-size: 1.5rem; font-weight: 550; }
+    .fit-list { list-style: none; margin: 0; padding: 0; }
+    .fit-list li { position: relative; padding: .9rem 0 .9rem 1.4rem; border-bottom: 1px solid var(--soft-rule); color: rgba(250,250,250,.72); font-size: .88rem; }
+    .fit-list li::before { content: ""; position: absolute; left: 0; top: 1.42rem; width: 6px; height: 6px; background: var(--accent); }
+    .aside-block + .aside-block { margin-top: 2.2rem; }
+
+    .quote {
+      padding: clamp(5rem, 9vw, 9rem) 0;
+      border-top: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+      overflow: hidden;
+    }
+    .quote__inner { position: relative; }
+    .quote__inner::before {
+      content: "“";
+      position: absolute;
+      left: -42px;
+      top: -120px;
+      color: rgba(255,235,0,.075);
+      font-family: "HRE Display", serif;
+      font-size: 28rem;
+      line-height: 1;
+    }
+    blockquote { position: relative; margin: 0; max-width: 1050px; }
+    blockquote p {
+      margin: 0;
+      font-family: "HRE Display", serif;
+      font-size: clamp(2.4rem, 5.2vw, 5.8rem);
+      font-weight: 500;
+      letter-spacing: -.045em;
+      line-height: 1.04;
+    }
+    blockquote p em { color: var(--accent); font-weight: 500; }
+    blockquote footer { margin-top: 2rem; color: var(--muted); font-size: .7rem; font-weight: 650; letter-spacing: .16em; text-transform: uppercase; }
+
+    .proof { padding: clamp(5rem, 9vw, 9rem) 0; }
+    .proof__head { display: flex; justify-content: space-between; align-items: end; gap: 2rem; margin-bottom: 2.8rem; }
+    .proof__head h2 { margin: .6rem 0 0; font-family: "HRE Display", serif; font-size: clamp(2.7rem, 5vw, 5.2rem); line-height: 1; letter-spacing: -.045em; }
+    .proof__head h2 em { color: var(--accent); }
+    .proof__head p:last-child { max-width: 430px; margin: 0; color: var(--muted); }
+    .proof__grid { display: grid; grid-template-columns: 1.08fr .92fr; gap: 1rem; align-items: stretch; }
+    .proof__image { min-height: 480px; overflow: hidden; background: var(--surface); }
+    .proof__image:nth-child(2) { margin-top: 4rem; }
+    .proof__image img { width: 100%; height: 100%; object-fit: cover; transition: transform .7s ease; }
+    .proof__image:hover img { transform: scale(1.025); }
+
+    .about {
+      padding: clamp(5rem, 9vw, 9rem) 0;
+      border-top: 1px solid var(--rule);
+      background: var(--surface);
+    }
+    .about__grid { display: grid; grid-template-columns: 320px 1fr; gap: clamp(3rem, 8vw, 7rem); align-items: center; }
+    .about__portrait { border: 1px solid var(--rule); padding: 14px; }
+    .about__portrait img { width: 100%; aspect-ratio: 1; object-fit: cover; filter: grayscale(1); }
+    .about__copy .lede { max-width: 750px; margin: 1.8rem 0 0; }
+    .about__copy p:last-child { max-width: 750px; color: rgba(250,250,250,.68); }
+
+    .booking {
+      position: relative;
+      padding: clamp(6rem, 12vw, 12rem) 0;
+      overflow: hidden;
+    }
+    .booking::before {
+      content: "";
+      position: absolute;
+      width: 900px;
+      height: 900px;
+      right: -340px;
+      top: -360px;
+      background: radial-gradient(circle, rgba(255,235,0,.09), transparent 68%);
+    }
+    .booking__inner { position: relative; max-width: 980px; }
+    .booking h2 { margin-bottom: 1.8rem; }
+    .booking .lede { max-width: 760px; margin-bottom: 2.2rem; }
+    .booking__note { margin: 1.2rem 0 0; color: var(--dim); font-size: .74rem; }
+
+    .site-footer { border-top: 1px solid var(--rule); padding: 2.2rem 0; }
+    .site-footer__inner { display: flex; justify-content: space-between; align-items: center; gap: 2rem; color: var(--dim); font-size: .72rem; }
+    .footer-links { display: flex; flex-wrap: wrap; gap: 1.3rem; }
+    .footer-links a { text-underline-offset: 4px; }
+    .footer-links a:hover { color: var(--accent); }
+
+    @media (max-width: 980px) {
+      .hero__grid { grid-template-columns: 1fr; gap: 4rem; }
+      .hero__copy { max-width: 780px; }
+      .hero__proof { width: min(620px, 100%); }
+      .facts__grid { grid-template-columns: repeat(2, 1fr); }
+      .fact:nth-child(3) { border-left: 1px solid var(--rule); }
+      .fact { border-bottom: 1px solid var(--rule); }
+      .reel__head, .talk__grid { grid-template-columns: 1fr; }
+      .talk__aside { max-width: 620px; }
+      .proof__grid { grid-template-columns: 1fr 1fr; }
+      .proof__image:last-child { grid-column: 1 / -1; min-height: 560px; }
+      .about__grid { grid-template-columns: 250px 1fr; }
+    }
+
+    @media (max-width: 700px) {
+      body { font-size: 16px; }
+      .shell { width: min(100% - 36px, var(--max)); }
+      .site-header { height: 78px; }
+      .nav a:not(.nav-cta) { display: none; }
+      .nav .nav-cta { padding: .56rem .72rem; }
+      .wordmark { font-size: .64rem; }
+      .hero__grid { padding: 126px 0 64px; }
+      .hero h1 { font-size: clamp(3.45rem, 17vw, 5.4rem); }
+      .hero__proof { padding-left: 16px; padding-bottom: 18px; }
+      .hero__caption { right: 10px; }
+      .facts__grid { grid-template-columns: 1fr 1fr; }
+      .fact { min-height: 104px; padding: 1.2rem 1rem; }
+      .fact strong { font-size: .96rem; }
+      .reel__head { gap: 1.6rem; }
+      .talk__grid { gap: 3rem; }
+      .talk__aside { padding: 1.4rem; }
+      .takeaway { grid-template-columns: 40px 1fr; }
+      .proof__head { display: block; }
+      .proof__head p:last-child { margin-top: 1.2rem; }
+      .proof__grid { grid-template-columns: 1fr; }
+      .proof__image, .proof__image:last-child { min-height: 500px; }
+      .proof__image:nth-child(2) { margin-top: 0; }
+      .proof__image:last-child { grid-column: auto; }
+      .about__grid { grid-template-columns: 1fr; }
+      .about__portrait { width: min(320px, 100%); }
+      .site-footer__inner { align-items: flex-start; flex-direction: column; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="site-header__inner shell">
+      <a class="wordmark" href="/" aria-label="Robert Echevarria home">Robert Echevarria</a>
+      <nav class="nav" aria-label="Speaking page">
+        <a href="#talk">The talk</a>
+        <a href="#reel">Reel</a>
+        <a href="#about">About</a>
+        <a class="nav-cta" href="#book">Book Robert</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="hero__grid shell">
+        <div class="hero__copy">
+          <p class="eyebrow">Speaking for owner-operators</p>
+          <h1>AI without the <em>theater.</em></h1>
+          <p class="lede">Robert Echevarria brings the view from inside an AI-native business: what works now, where human judgment still owns the decision, and what operators should do next.</p>
+          <div class="hero__actions">
+            <a class="button js-booking-cta" href="mailto:robert@buildwisemedia.com?subject=Speaking%20inquiry%20for%20Robert%20Echevarria&amp;body=Event%20date%3A%0AAudience%3A%0AFormat%3A%0AWhat%20you%20want%20the%20room%20to%20leave%20with%3A">Bring this talk to your room</a>
+            <a class="button button--ghost js-reel-cta" href="#reel">Watch the 63-second reel</a>
+          </div>
+        </div>
+
+        <div class="hero__proof">
+          <figure class="hero__photo">
+            <img src="/speaking/assets/buckhead-club-1.jpg" alt="Robert Echevarria speaking to an audience at the Buckhead Club during Running AI in a Real Business" width="1152" height="1536" fetchpriority="high">
+          </figure>
+          <p class="hero__caption">Buckhead Club · Atlanta · June 25, 2026</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="facts" aria-label="Speaking overview">
+      <div class="facts__grid shell">
+        <div class="fact"><span>Core talk</span><strong>Running AI in a Real Business</strong></div>
+        <div class="fact"><span>Best for</span><strong>Owners and leadership teams</strong></div>
+        <div class="fact"><span>Room</span><strong>Keynote, fireside, or workshop</strong></div>
+        <div class="fact"><span>Based in</span><strong>Atlanta, Georgia</strong></div>
+      </div>
+    </section>
+
+    <section class="reel" id="reel">
+      <div class="shell">
+        <div class="reel__head">
+          <div>
+            <p class="eyebrow">See the room</p>
+            <h2>One minute of <em>proof.</em></h2>
+          </div>
+          <p class="lede">A short cut from Robert's June 25 talk at the Buckhead Club. No studio voiceover. No stock audience. Just the material in a real room.</p>
+        </div>
+        <div class="video-frame">
+          <video controls playsinline preload="metadata" poster="/speaking/assets/robert-echevarria-speaker-reel-poster.jpg" aria-label="Robert Echevarria speaker reel from the Buckhead Club">
+            <source src="/speaking/assets/robert-echevarria-speaker-reel-16x9.mp4" type="video/mp4">
+            <track kind="captions" src="/speaking/assets/robert-echevarria-speaker-reel.vtt" srclang="en" label="English" default>
+            Your browser does not support embedded video. <a href="/speaking/assets/robert-echevarria-speaker-reel-16x9.mp4">Open the speaker reel</a>.
+          </video>
+        </div>
+        <p class="media-note">63 seconds · captions burned in · sound on</p>
+      </div>
+    </section>
+
+    <section class="talk" id="talk">
+      <div class="talk__grid shell">
+        <div class="talk__copy">
+          <p class="eyebrow">The core talk</p>
+          <h2>Running AI in a <em>real business.</em></h2>
+          <p class="lede">Most AI talks start with the future. This one starts with the operating week.</p>
+          <p>Robert opens the curtain on what changes when AI moves from an experiment to part of the company: how work gets delegated, where trust breaks, why operator judgment matters more rather than less, and which decisions cannot wait for the technology to feel settled.</p>
+          <p>The room leaves with a practical model for separating useful capability from noise, plus a sharper answer to the only question that matters: what should we actually do with this now?</p>
+
+          <div class="takeaways" aria-label="Audience takeaways">
+            <div class="takeaway"><span>01</span><p>See where AI can carry operational work now, and where a human still owns the call.</p></div>
+            <div class="takeaway"><span>02</span><p>Move from scattered experiments to a system that compounds what a small team can do.</p></div>
+            <div class="takeaway"><span>03</span><p>Handle trust when AI touches customers, employees, and the decisions around them.</p></div>
+            <div class="takeaway"><span>04</span><p>Leave with the decisions an owner-operator should make this quarter.</p></div>
+          </div>
+        </div>
+
+        <aside class="talk__aside" aria-label="Talk fit and formats">
+          <figure class="talk__photo">
+            <img src="/speaking/assets/buckhead-club-3.jpg" alt="Robert Echevarria speaking to Buckhead Club attendees" width="1152" height="1536" loading="lazy">
+          </figure>
+          <div class="aside-block">
+            <h3>Built for rooms with real decisions to make.</h3>
+            <ul class="fit-list">
+              <li>Owner and CEO peer groups</li>
+              <li>Service-business associations</li>
+              <li>Leadership offsites</li>
+              <li>Operator and growth conferences</li>
+            </ul>
+          </div>
+          <div class="aside-block">
+            <p class="eyebrow">Adaptable format</p>
+            <ul class="fit-list">
+              <li>Focused keynote</li>
+              <li>Talk plus live Q&amp;A</li>
+              <li>Fireside conversation</li>
+              <li>Owner-operator working session</li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="quote">
+      <div class="quote__inner shell">
+        <blockquote>
+          <p>“Are you going to give up your sovereignty to the AI, or use it as a <em>tool?</em>”</p>
+          <footer>Robert Echevarria · Buckhead Club · June 25, 2026</footer>
+        </blockquote>
+      </div>
+    </section>
+
+    <section class="proof" aria-labelledby="proof-heading">
+      <div class="shell">
+        <div class="proof__head">
+          <div>
+            <p class="eyebrow">From the Buckhead Club</p>
+            <h2 id="proof-heading">The talk, in a <em>real room.</em></h2>
+          </div>
+          <p>Robert joined a live operator conversation in Atlanta on how service businesses ride the AI wave instead of getting crushed by it.</p>
+        </div>
+        <div class="proof__grid">
+          <figure class="proof__image"><img src="/speaking/assets/buckhead-club-1.jpg" alt="Robert Echevarria addressing attendees beneath the Running AI in a Real Business title slide" width="1152" height="1536" loading="lazy"></figure>
+          <figure class="proof__image"><img src="/speaking/assets/buckhead-club-2.jpg" alt="Robert Echevarria seated with fellow speakers during the Buckhead Club event" width="1152" height="1536" loading="lazy"></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="about__grid shell">
+        <figure class="about__portrait">
+          <img src="/robert-echevarria.webp" alt="Portrait of Robert Echevarria" width="800" height="800" loading="lazy">
+        </figure>
+        <div class="about__copy">
+          <p class="eyebrow">About Robert</p>
+          <h2>An operator with the <em>receipts.</em></h2>
+          <p class="lede">Robert Echevarria runs an AI-native marketing agency for owner-led service businesses across North America.</p>
+          <p>His perspective comes from building the systems, changing how teams work, and living with the consequences when AI moves from a demo into the company. He speaks for leaders who want a rational view of the technology without the hype cycle or the fear theater.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="booking" id="book">
+      <div class="booking__inner shell">
+        <p class="eyebrow">For organizers</p>
+        <h2>Put a useful AI conversation in the <em>room.</em></h2>
+        <p class="lede">Send the date, audience, format, and what you want people to leave with. Robert will shape the conversation around the decisions your room is actually facing.</p>
+        <a class="button js-booking-cta" href="mailto:robert@buildwisemedia.com?subject=Speaking%20inquiry%20for%20Robert%20Echevarria&amp;body=Event%20date%3A%0AAudience%3A%0AFormat%3A%0AWhat%20you%20want%20the%20room%20to%20leave%20with%3A">Email Robert about your event</a>
+        <p class="booking__note">Direct inquiry · robert@buildwisemedia.com</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner shell">
+      <span>Robert Echevarria · Atlanta, GA</span>
+      <div class="footer-links">
+        <a href="/">Writing</a>
+        <a href="https://www.linkedin.com/in/robertechevarria/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
+      </div>
+    </div>
+  </footer>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Robert Echevarria",
+    "url": "https://robertechevarria.com",
+    "image": "https://robertechevarria.com/robert-echevarria-og.jpg",
+    "jobTitle": "Founder and CEO",
+    "description": "Operator and speaker on running AI inside a real service business.",
+    "knowsAbout": ["Artificial Intelligence", "Service Business Operations", "AI Implementation", "Marketing Automation"],
+    "sameAs": [
+      "https://www.linkedin.com/in/robertechevarria/",
+      "https://x.com/heyroberte",
+      "https://www.instagram.com/heyroberte/",
+      "https://www.youtube.com/@heyroberte"
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Atlanta",
+      "addressRegion": "GA",
+      "addressCountry": "US"
+    }
+  }
+  </script>
+  <script>
+    document.querySelectorAll('.js-booking-cta').forEach(function(link) {
+      link.addEventListener('click', function() {
+        gtag('event', 'speaker_booking_intent', { cta_text: link.textContent.trim() });
+      });
+    });
+    document.querySelector('.js-reel-cta').addEventListener('click', function() {
+      gtag('event', 'speaker_reel_intent', { cta_source: 'hero' });
+    });
+    document.querySelector('.video-frame video').addEventListener('play', function() {
+      gtag('event', 'speaker_reel_play', { reel_version: 'buckhead_club_63s' });
+    }, { once: true });
+  </script>
+</body>
+</html>

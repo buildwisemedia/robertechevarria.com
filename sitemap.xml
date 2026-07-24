@@ -5,9 +5,15 @@
         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
   <url>
     <loc>https://robertechevarria.com/</loc>
-    <lastmod>2026-07-23</lastmod>
+    <lastmod>2026-07-24</lastmod>
     <priority>1.0</priority>
     <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://robertechevarria.com/speaking</loc>
+    <lastmod>2026-07-24</lastmod>
+    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://robertechevarria.com/newsletter/the-standing-order</loc>

@@ -5,8 +5,13 @@ resolver:
   git_blob_hash: "f22653ac16d5886db96943f4b051a6a13038d17f"
 surface:
   client: "robert-echevarria"
-  type: "website"
+  type: "speaking_page"
   domain: "robertechevarria.com"
+  route: "/speaking"
+  audience:
+    - "event organizers"
+    - "program chairs"
+    - "owner and executive peer-group hosts"
 resolution:
   identity_class: "hre"
   composition_mode: "single"
@@ -18,5 +23,8 @@ resolution:
   system_name: "Yellow Alert"
   status: "locked"
 decision:
-  reason: "Robert's personal brand and domain resolve to the HRE identity class."
-  visual_change_scope: "functional newsletter form, legal links, and conversion plumbing inside the existing Yellow Alert system"
+  reason: "A speaking page on Robert's personal domain resolves to the HRE identity class."
+  visual_change_scope: "A new proof-led speaking route using the existing Yellow Alert system, real Buckhead Club media, and an organizer-specific booking path."
+  hil_required_before_authoring: false
+  hil_required_before_production: true
+  authoring_authority: "Robert's explicit Execute instruction on 2026-07-24."
