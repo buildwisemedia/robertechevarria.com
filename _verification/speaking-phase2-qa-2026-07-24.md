@@ -41,3 +41,11 @@ Immutable deployment: `https://1e3f9e06.robertechevarria.pages.dev/speaking/`
 - No unverified revenue, pipeline, or client-performance claim is used.
 - The only quotation is Robert's own onstage line from the approved footage.
 - The route adds no form or new data collection; existing privacy and terms pages remain present, linked, and indexable for production.
+
+## Audio remediation — 2026-07-27
+
+- Rebuilt both reel audio streams from a locally enhanced 48 kHz dialogue master.
+- Reduced room/phone noise, restored voice warmth and presence, matched the three source cuts, and normalized to approximately `-16.5 LUFS`.
+- Preserved both H.264 video streams bit-for-bit.
+- Corrected the external SRT and WebVTT cue at `00:38.580`.
+- Production remains unshipped pending Robert's review of the updated staging audio.
